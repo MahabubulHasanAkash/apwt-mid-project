@@ -20,3 +20,12 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('creator.home');
 });
+
+Route::get('/collection', function () {
+    return view('creator.collection');
+});
+
+
+Route::get('/creation', function () {
+    return view('creator.creation');
+});

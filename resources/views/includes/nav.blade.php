@@ -1,5 +1,5 @@
 <div class="w3-bar w3-theme">
-      <a href="#" class="w3-bar-item w3-button w3-padding-16">Home</a>
+      <a href="#" class="w3-bar-item w3-button w3-padding-16">Marketplace</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-16">Creation</a>
       <a href="#" class="w3-bar-item w3-button w3-padding-16">Collection</a>
       <div class="w3-dropdown-hover">
