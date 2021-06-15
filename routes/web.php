@@ -52,6 +52,13 @@ Route::get('registration', function () {
     return view('seller.registration');
 });
 
+Route::get('/dashboard', function () {
+    return view('Collector.dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('Collector.profile');
+});
 
 
 

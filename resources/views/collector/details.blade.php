@@ -13,8 +13,6 @@
 <body>
     @include('includes.nav')
 
-    <link rel="stylesheet" type="text/css" href="{{asset('css/details.css')}}">
-
     <div class="container bootdey">
         <div class="col-md-12">
         <section class="panel">
