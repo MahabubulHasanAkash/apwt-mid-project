@@ -27,7 +27,7 @@
                   <div class="col-md-6">
                       <h4 class="pro-d-title">
                           <a href="#" class="">
-                              title - 1
+                              Art title - 1
                           </a>
                       </h4>
                       <p>
