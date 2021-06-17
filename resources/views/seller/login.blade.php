@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group row">
                             <div class="col-md-10 offset-md-1">
-                                <input type="submit" class="btn btn-block" value="Login" style="background: #880E4F; color: white; font-weight:bold">
+                                <input a href="/admin/dashboard" type="submit" class="btn btn-block" value="Login" style="background: #880E4F; color: white; font-weight:bold">
                             </div>
                         </div>
                     </form>
