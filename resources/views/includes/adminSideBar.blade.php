@@ -3,8 +3,9 @@
     <div class="w3-white w3-text-grey w3-card-4">
       <div class="w3-display-container"><br>
         <p class="w3-center"><img src="https://images.clipartlogo.com/files/istock/previews/9339/93397305-vector-user-icon-of-man-in-business-suit.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
-        <div class="w3-display-bottomcenter w3-container w3-text-black"><br>
-          <p style="text-align: center">ABU BAKAR SIDDIQ </p>
+        <div class="w3-display-bottomcenter w3-container w3-text-black">
+          <h3 style="text-align: center;">Welcome </h3>
+          <p style="text-align: center">ABU BAKAR SIDDIQ </p><br>
         </div>
       </div>
       <div class="w3-container">
@@ -20,8 +21,7 @@
           <a href="/admin/dashboard" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bank fa-fw"></i>  Dash Board</a>
           <a href="/admin/myProfile" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  My Profile</a>
           <a href="/admin/editProfile" class="w3-bar-item w3-button w3-padding"><i class="fa fa-eye fa-fw"></i>  Edit Profile</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Admin Panel</a>
-          <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Promo</a>
+          <a href="/admin/adminPanel" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Admin Panel</a>
           <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  News</a> 
           <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-history fa-fw"></i>  History</a>
           <a href="/admin/terms" class="w3-bar-item w3-button w3-padding"><i class="fa fa-cog fa-fw"></i>  Terms & Conditions</a><br><br>

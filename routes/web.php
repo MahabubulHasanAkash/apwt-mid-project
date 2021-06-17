@@ -50,6 +50,10 @@ Route::get('/admin/terms', function () {
     return view('admin.terms');
 });
 
+Route::get('/admin/adminPanel', function () {
+    return view('admin.adminPanel');
+});
+
 Route::get('/login', function () {
     return view('seller.login');
 });
