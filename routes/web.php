@@ -46,6 +46,22 @@ Route::get('/admin/editProfile', function () {
     return view('admin.editProfile');
 });
 
+Route::get('/admin/addCreator', function () {
+    return view('admin.addCreator');
+});
+
+Route::get('/admin/viewCreator', function () {
+    return view('admin.viewCreator');
+});
+
+Route::get('/admin/addCollector', function () {
+    return view('admin.addCollector');
+});
+
+Route::get('/admin/viewCollector', function () {
+    return view('admin.viewCollector');
+});
+
 Route::get('/admin/terms', function () {
     return view('admin.terms');
 });

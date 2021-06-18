@@ -31,15 +31,15 @@
       <div class="w3-dropdown-hover">
         <button class="w3-button w3-padding-24"> Collector <i class="fa fa-caret-down"></i></button>
           <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button">Add Collector</a>
-            <a href="#" class="w3-bar-item w3-button">View Collector</a>               
+            <a href="/admin/addCollector" class="w3-bar-item w3-button">Add Collector</a>
+            <a href="/admin/viewCollector" class="w3-bar-item w3-button">View Collectors</a>               
           </div>
       </div>
       <div class="w3-dropdown-hover">
         <button class="w3-button w3-padding-24"> Creator <i class="fa fa-caret-down"></i></button>
           <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-            <a href="#" class="w3-bar-item w3-button">Add Creators</a>
-            <a href="#" class="w3-bar-item w3-button">View Creators</a>               
+            <a href="/admin/addCreator" class="w3-bar-item w3-button">Add Creator</a>
+            <a href="/admin/viewCreator" class="w3-bar-item w3-button">View Creators</a>               
           </div>
       </div>
       <div class="w3-dropdown-hover">

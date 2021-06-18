@@ -170,15 +170,16 @@ tr:nth-child(even) {
             
                         
           </div><br><br>
-          <p>Last updated on May 14, 2021 <br><br>
+          <textarea id="terms" name="terms" rows="8" cols="100" >
+            These terms and conditions constitute a legally binding agreement (the “Agreement”) between you (also referred to herein as “You”, “Your” or “User”) and Bentley University ( “we” or “us”), governing your purchase of NFTs as part of the Bentley University NFT Collection Offering (the “Offering”). BY PARTICIPATING IN THIS OFFERING, YOU AGREE TO BE BOUND BY THESE TERMS AND ALL OF THE TERMS INCORPORATED HEREIN AND ALL OF THE TERMS OF SERVICE INCLUDED AS PART OF OZONE NETWORKS, INC D/B/A OPENSEA https://opensea.io/tos (the “OpenSea Terms of Service”). If you do not agree to the terms of this Agreement, as well as the OpenSea Terms of Service, you may not participate in the Offering.
 
-These terms and conditions constitute a legally binding agreement (the “Agreement”) between you (also referred to herein as “You”, “Your” or “User”) and Bentley University ( “we” or “us”), governing your purchase of NFTs as part of the Bentley University NFT Collection Offering (the “Offering”). BY PARTICIPATING IN THIS OFFERING, YOU AGREE TO BE BOUND BY THESE TERMS AND ALL OF THE TERMS INCORPORATED HEREIN AND ALL OF THE TERMS OF SERVICE INCLUDED AS PART OF OZONE NETWORKS, INC D/B/A OPENSEA https://opensea.io/tos (the “OpenSea Terms of Service”). If you do not agree to the terms of this Agreement, as well as the OpenSea Terms of Service, you may not participate in the Offering. <br><br>
-
-By entering into this Agreement, and/or by you participating in the Bentley University NFT Offering, you expressly acknowledge that you understand this Agreement and accept all of its terms. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MAY NOT PARTICIPATE IN THE OFFERING. </p><br>
+By entering into this Agreement, and/or by you participating in the Bentley University NFT Offering, you expressly acknowledge that you understand this Agreement and accept all of its terms. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MAY NOT PARTICIPATE IN THE OFFERING
+            </textarea><br><br>
 <button class="w3-button w3-blue"style="float: right;"><i class="fa fa-edit w3-margin-right"></i>Edit</button><br><br><br><br>
-          </div><br>
+                    
+    
           
-          <br>
+          
         </div>
   
       <!-- End Right Column -->
