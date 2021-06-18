@@ -17,18 +17,36 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
+Route::get('/creator/home', function () {
     return view('creator.home');
 });
 
-Route::get('/collection', function () {
+Route::get('creator/collection', function () {
     return view('creator.collection');
 });
 
 
-Route::get('/creation', function () {
+Route::get('creator/creation', function () {
     return view('creator.creation');
 });
+
+
+
+Route::get('creator/profile', function () {
+    return view('creator.profile');
+});
+
+Route::get('creator/payment', function () {
+    return view('creator.profile_payment');
+});
+
+
+Route::get('creator/settings', function () {
+    return view('creator.profile_settings');
+});
+
+
+
 
 Route::get('/collector', function () {
     return view('Collector.details');

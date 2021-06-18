@@ -5,79 +5,76 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @include('includes.head')
-    <title>Collection</title>
+    <title>Collections</title>
 </head>
 <body>
     @include('includes.nav')
-    <div class="container">
-        <h2>Your Collection's</h2>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/lights.jpg" target="_blank">
-                <img src="https://specials-images.forbesimg.com/imageserve/1145144295/960x0.jpg?fit=scale" alt="Lights" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
+    <div class="w3-content w3-margin-top" style="max-width:1400px;">
+         <div class="w3-row-padding">
+         <div class="w3-third">
+           <div class="w3-white w3-text-grey w3-card-4">
+              <div class="w3-display-container">
+              <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" style="width:100%" alt="Avatar">
+                <div class="w3-display-bottomleft w3-container w3-text-black">
+                <h2 style="color:white">Jane Doe</h2>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/nature.jpg" target="_blank">
-                <img src="https://lh3.googleusercontent.com/_YyEJjXI8nsPSfQ-9SHgEdddB6P4nVRPp-g_5vNkDkiOLXX9d69VbtSMSLrqFxIpfEdUBFf9qSWpGFD3aEaYnCn_=w640-h400-e365-rj-sc0x00ffffff" alt="Nature" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
+          <br>
+          <div class="w3-container">
+            <a href=''>On Sell</p>
+            <a href=''>Life Offers</p>
+            <a href=''>Sell History</p>
+            <a href=''>Send Creations</p>
+            <a href=''>About</p>
+            <a href=''>Payment Settings</p>
+            <a href=''>Account Settings</p>
+       
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href=" target="_blank">
-                <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Fjords" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
+        </div><br>
       </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/lights.jpg" target="_blank">
-                <img src="https://specials-images.forbesimg.com/imageserve/1145144295/960x0.jpg?fit=scale" alt="Lights" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+
+    <div class="w3-twothird">
+        <div class="w3-container w3-card w3-white w3-margin-bottom">
+          <h3 style="display: inline-block">Your Collection<h3>  
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="/details" {{--put link for next page--}} target="_blank"> 
+                      <img src="https://cdn.pixabay.com/photo/2017/11/20/02/00/fantasy-2964231_960_720.jpg" alt="Lights" style="width:100%">
+                      <div class="caption">
+                        <p>Title 1</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/nature.jpg" target="_blank">
-                <img src="https://lh3.googleusercontent.com/_YyEJjXI8nsPSfQ-9SHgEdddB6P4nVRPp-g_5vNkDkiOLXX9d69VbtSMSLrqFxIpfEdUBFf9qSWpGFD3aEaYnCn_=w640-h400-e365-rj-sc0x00ffffff" alt="Nature" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href="/w3images/nature.jpg" target="_blank">
+                      <img src="https://lh3.googleusercontent.com/_YyEJjXI8nsPSfQ-9SHgEdddB6P4nVRPp-g_5vNkDkiOLXX9d69VbtSMSLrqFxIpfEdUBFf9qSWpGFD3aEaYnCn_=w640-h400-e365-rj-sc0x00ffffff" alt="Nature" style="width:100%">
+                      <div class="caption">
+                        <p>Title 2</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href=" target="_blank">
-                <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Fjords" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum donec id elit non mi porta gravida at eget metus.</p>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <a href=" target="_blank">
+                      <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Fjords" style="width:100%">
+                      <div class="caption">
+                        <p>Title 3</p>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </a>
+              </div>
             </div>
-          </div>
+            
         </div>
-      </div>
+    </div>   
+</div> 
+</div> 
+
+    @include('includes.footer')
 </body>
-@include('includes.footer')
-</html>
+</html>     
