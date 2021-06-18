@@ -165,87 +165,19 @@ tr:nth-child(even) {
   
       <!-- Right Column -->
       <div class="w3-twothird">
-        @include('includes.adminButton')          
+  
+        @include('includes.adminButton')
+          
+            
+            
+            
                         
           </div><br><br>
-          <div class="w3-quarter">
-            <div class="w3-container w3-blue w3-padding-16">
-              <div class="w3-left"><i class="fa fa-paint-brush w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>99</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Art</h4>
-            </div>
-          </div>
-          <div class="w3-quarter" >
-            <div class="w3-container w3-teal w3-padding-16">
-              <div class="w3-left"><i class="fa fa-music w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>23</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Music</h4>
-            </div>
-          </div>
-          <div class="w3-quarter" >
-            <div class="w3-container w3-orange w3-text-white w3-padding-16">
-              <div class="w3-left"><i class="fa fa-film w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>50</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Videos</h4>
-            </div>
-          </div>
-            <div class="w3-quarter" >
-              <div class="w3-container w3-dark-grey w3-padding-16">
-                <div class="w3-left"><i class="fa fa-signal w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                  <h3>2</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Others</h4>
-              </div>
+          
             
           </div><br>
           
-          <div class="w3-container w3-padding "><br><br><br><br>
-            <h6 class="w3-opacity">Recent Activity</h6>
-            <table>
-              <tr>
-                <th>Date</th>
-                <th>Buyer</th>
-                <th>Seller</th>
-                <th>Item</th>
-                <th>Amount</th>
-              </tr>
-              <tr>
-                <td>06-06-2021</td>
-                <td>Anik</td>
-                <td>Akash</td>
-                <td>Music</td>
-                <td>2000</td>
-
-              </tr>
-              <tr>
-                <td>04-06-2021</td>
-                <td>Afridi</td>
-                <td>Choyon</td>
-                <td>Picture</td>
-                <td>4000</td>
-
-              </tr>
-              <tr>
-                <td>02-06-2021</td>
-                <td>Faisal</td>
-                <td>Nafi</td>
-                <td>Video</td>
-                <td>6000</td>
-
-              </tr>
-            </table>
-          </div>
+          
         </div>
   
       <!-- End Right Column -->

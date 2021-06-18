@@ -164,88 +164,22 @@ tr:nth-child(even) {
       @include('includes.adminSideBar');
   
       <!-- Right Column -->
-      <div class="w3-twothird">
-        @include('includes.adminButton')          
+      <div class="w3-twothird">         
+        @include('includes.adminButton')
+            
+            
                         
           </div><br><br>
-          <div class="w3-quarter">
-            <div class="w3-container w3-blue w3-padding-16">
-              <div class="w3-left"><i class="fa fa-paint-brush w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>99</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Art</h4>
-            </div>
-          </div>
-          <div class="w3-quarter" >
-            <div class="w3-container w3-teal w3-padding-16">
-              <div class="w3-left"><i class="fa fa-music w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>23</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Music</h4>
-            </div>
-          </div>
-          <div class="w3-quarter" >
-            <div class="w3-container w3-orange w3-text-white w3-padding-16">
-              <div class="w3-left"><i class="fa fa-film w3-xxxlarge"></i></div>
-              <div class="w3-right">
-                <h3>50</h3>
-              </div>
-              <div class="w3-clear"></div>
-              <h4>Videos</h4>
-            </div>
-          </div>
-            <div class="w3-quarter" >
-              <div class="w3-container w3-dark-grey w3-padding-16">
-                <div class="w3-left"><i class="fa fa-signal w3-xxxlarge"></i></div>
-                <div class="w3-right">
-                  <h3>2</h3>
-                </div>
-                <div class="w3-clear"></div>
-                <h4>Others</h4>
-              </div>
-            
-          </div><br>
+          <textarea id="terms" name="terms" rows="8" cols="100" >
+            These terms and conditions constitute a legally binding agreement (the “Agreement”) between you (also referred to herein as “You”, “Your” or “User”) and Bentley University ( “we” or “us”), governing your purchase of NFTs as part of the Bentley University NFT Collection Offering (the “Offering”). BY PARTICIPATING IN THIS OFFERING, YOU AGREE TO BE BOUND BY THESE TERMS AND ALL OF THE TERMS INCORPORATED HEREIN AND ALL OF THE TERMS OF SERVICE INCLUDED AS PART OF OZONE NETWORKS, INC D/B/A OPENSEA https://opensea.io/tos (the “OpenSea Terms of Service”). If you do not agree to the terms of this Agreement, as well as the OpenSea Terms of Service, you may not participate in the Offering.
+
+By entering into this Agreement, and/or by you participating in the Bentley University NFT Offering, you expressly acknowledge that you understand this Agreement and accept all of its terms. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MAY NOT PARTICIPATE IN THE OFFERING
+            </textarea><br><br>
+<button class="w3-button w3-blue"style="float: right;"><i class="fa fa-edit w3-margin-right"></i>Edit</button><br><br><br><br>
+                    
+    
           
-          <div class="w3-container w3-padding "><br><br><br><br>
-            <h6 class="w3-opacity">Recent Activity</h6>
-            <table>
-              <tr>
-                <th>Date</th>
-                <th>Buyer</th>
-                <th>Seller</th>
-                <th>Item</th>
-                <th>Amount</th>
-              </tr>
-              <tr>
-                <td>06-06-2021</td>
-                <td>Anik</td>
-                <td>Akash</td>
-                <td>Music</td>
-                <td>2000</td>
-
-              </tr>
-              <tr>
-                <td>04-06-2021</td>
-                <td>Afridi</td>
-                <td>Choyon</td>
-                <td>Picture</td>
-                <td>4000</td>
-
-              </tr>
-              <tr>
-                <td>02-06-2021</td>
-                <td>Faisal</td>
-                <td>Nafi</td>
-                <td>Video</td>
-                <td>6000</td>
-
-              </tr>
-            </table>
-          </div>
+          
         </div>
   
       <!-- End Right Column -->
@@ -255,7 +189,7 @@ tr:nth-child(even) {
     </div>
     
     <!-- End Page Container -->
-  </div><br>
+  </div><br><br>
 
 
 

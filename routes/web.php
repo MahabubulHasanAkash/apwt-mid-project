@@ -38,10 +38,46 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dash');
 });
 
+Route::get('/admin/myProfile', function () {
+    return view('admin.myProfile');
+});
 
-Route::get('login', function () {
+Route::get('/admin/editProfile', function () {
+    return view('admin.editProfile');
+});
+
+Route::get('/admin/addCreator', function () {
+    return view('admin.addCreator');
+});
+
+Route::get('/admin/viewCreator', function () {
+    return view('admin.viewCreator');
+});
+
+Route::get('/admin/addCollector', function () {
+    return view('admin.addCollector');
+});
+
+Route::get('/admin/viewCollector', function () {
+    return view('admin.viewCollector');
+});
+
+Route::get('/admin/terms', function () {
+    return view('admin.terms');
+});
+
+Route::get('/admin/adminPanel', function () {
+    return view('admin.adminPanel');
+});
+
+Route::get('/login', function () {
     return view('seller.login');
 });
+
+Route::post('/login', function () {
+    return redirect ('/admin/dashboard');
+});
+
 
 
 Route::get('seller/home', function () {
