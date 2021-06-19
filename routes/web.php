@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/signup', function () {
+    return view('auth.signup');
+});
+
+
 Route::get('/creator/home', function () {
     return view('creator.home');
 });
@@ -46,40 +55,20 @@ Route::get('creator/settings', function () {
 });
 
 
-
-
-Route::get('/collector', function () {
-    return view('Collector.details');
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dash');
+Route::get('creator/transactions', function () {
+    return view('creator.transactions');
 });
 
 
-Route::get('login', function () {
-    return view('seller.login');
+Route::get('creator/bids', function () {
+    return view('creator.bid');
 });
 
 
-Route::get('seller/home', function () {
-    return view('seller.home');
+Route::get('creator/proof_auth', function () {
+    return view('creator.proof_auth');
 });
 
-Route::get('registration', function () {
-    return view('seller.registration');
+Route::get('creator/details', function () {
+    return view('creator.details');
 });
-
-
-
-
-
-
-/*Route::get('login', [LoginController::class, 'index']);
-Route::post('login', [LoginController::class, 'login']);
-Route::get('registration', [RegistrationController::class, 'index']);
-Route::get('logout', [RegistrationController::class, 'logout']);
-Route::post('registration', [RegistrationController::class, 'store']);
-Route::get('creative-list', [CreativeListController::class, 'index']);
-Route::get('create-creative', [CreativeListController::class, 'create']);
-*/

@@ -26,7 +26,6 @@
           <div class="col-md-4">
             <div class="thumbnail">
               <a href="/details" {{--put link for next page--}} target="_blank"> 
-
                 <img src="https://cdn.pixabay.com/photo/2017/11/20/02/00/fantasy-2964231_960_720.jpg" alt="Lights" style="width:100%">
                 <div class="caption">
                   <p>Title 1</p>
