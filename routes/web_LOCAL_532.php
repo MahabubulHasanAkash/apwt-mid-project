@@ -17,6 +17,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/crator/home', function () {
+    return view('creator.home');
+});
+
+Route::get('/collection', function () {
+    return view('creator.collection');
+});
+
+
+Route::get('/creation', function () {
+    return view('creator.creation');
+});
+
+Route::get('/collector', function () {
+    return view('Collector.details');
+});
+
+Route::get('/admin/dashboard', function () {
+    return view('admin.dash');
+});
+
 Route::get('/admin/myProfile', function () {
     return view('admin.myProfile');
 });
@@ -49,38 +70,34 @@ Route::get('/admin/adminPanel', function () {
     return view('admin.adminPanel');
 });
 
+Route::get('/login', function () {
+    return view('seller.login');
+});
 
-
-
-
-Route::get('creator/collection', function () {
-    return view('creator.collection');
+Route::post('/login', function () {
+    return redirect ('/admin/dashboard');
 });
 
 
-Route::get('creator/creation', function () {
-    return view('creator.creation');
+
+Route::get('seller/home', function () {
+    return view('seller.home');
 });
 
-Route::get('creator/settings', function () {
-    return view('creator.profile_settings');
-});
-
-
-Route::get('creator/transactions', function () {
-    return view('creator.transactions');
+Route::get('registration', function () {
+    return view('seller.registration');
 });
 
 
-Route::get('creator/bids', function () {
-    return view('creator.bid');
-});
 
 
-Route::get('creator/proof_auth', function () {
-    return view('creator.proof_auth');
-});
 
-Route::get('creator/details', function () {
-    return view('creator.details');
-});
+
+/*Route::get('login', [LoginController::class, 'index']);
+Route::post('login', [LoginController::class, 'login']);
+Route::get('registration', [RegistrationController::class, 'index']);
+Route::get('logout', [RegistrationController::class, 'logout']);
+Route::post('registration', [RegistrationController::class, 'store']);
+Route::get('creative-list', [CreativeListController::class, 'index']);
+Route::get('create-creative', [CreativeListController::class, 'create']);
+*/

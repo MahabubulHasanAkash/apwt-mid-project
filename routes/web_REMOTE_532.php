@@ -17,41 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin/myProfile', function () {
-    return view('admin.myProfile');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
-Route::get('/admin/editProfile', function () {
-    return view('admin.editProfile');
-});
-
-Route::get('/admin/addCreator', function () {
-    return view('admin.addCreator');
-});
-
-Route::get('/admin/viewCreator', function () {
-    return view('admin.viewCreator');
-});
-
-Route::get('/admin/addCollector', function () {
-    return view('admin.addCollector');
-});
-
-Route::get('/admin/viewCollector', function () {
-    return view('admin.viewCollector');
-});
-
-Route::get('/admin/terms', function () {
-    return view('admin.terms');
-});
-
-Route::get('/admin/adminPanel', function () {
-    return view('admin.adminPanel');
+Route::get('/signup', function () {
+    return view('auth.signup');
 });
 
 
-
-
+Route::get('/creator/home', function () {
+    return view('creator.home');
+});
 
 Route::get('creator/collection', function () {
     return view('creator.collection');
@@ -61,6 +38,17 @@ Route::get('creator/collection', function () {
 Route::get('creator/creation', function () {
     return view('creator.creation');
 });
+
+
+
+Route::get('creator/profile', function () {
+    return view('creator.profile');
+});
+
+Route::get('creator/payment', function () {
+    return view('creator.profile_payment');
+});
+
 
 Route::get('creator/settings', function () {
     return view('creator.profile_settings');
