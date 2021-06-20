@@ -17,6 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/signup', function () {
+    return view('auth.signup');
+});
+
+
 Route::get('/admin/myProfile', function () {
     return view('admin.myProfile');
 });
@@ -51,6 +60,17 @@ Route::get('/admin/adminPanel', function () {
 
 
 
+Route::get('creator/home', function () {
+    return view('creator.home');
+});
+
+Route::get('creator/profile', function () {
+    return view('creator.profile');
+});
+
+Route::get('creator/payment', function () {
+    return view('creator.profile_payment');
+});
 
 
 Route::get('creator/collection', function () {
