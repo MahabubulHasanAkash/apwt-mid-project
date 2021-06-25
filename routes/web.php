@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/market', function () {
+    return view('includes.marketplace');
 });
 
 Route::get('/login', 'auth@index');
