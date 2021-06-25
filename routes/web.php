@@ -17,39 +17,45 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('creator.home');
+Route::get('/login', function () {
+    return view('auth.login');
 });
 
-Route::get('/collection', function () {
-    return view('creator.collection');
-});
-
-
-Route::get('/creation', function () {
-    return view('creator.creation');
-});
-
-Route::get('/collector', function () {
-    return view('Collector.details');
-});
-
-Route::get('/admin/dashboard', function () {
-    return view('admin.dash');
+Route::get('/signup', function () {
+    return view('auth.signup');
 });
 
 
-Route::get('login', function () {
-    return view('seller.login');
+Route::get('/admin/myProfile', function () {
+    return view('admin.myProfile');
 });
 
-
-Route::get('seller/home', function () {
-    return view('seller.home');
+Route::get('/admin/editProfile', function () {
+    return view('admin.editProfile');
 });
 
-Route::get('registration', function () {
-    return view('seller.registration');
+Route::get('/admin/addCreator', function () {
+    return view('admin.addCreator');
+});
+
+Route::get('/admin/viewCreator', function () {
+    return view('admin.viewCreator');
+});
+
+Route::get('/admin/addCollector', function () {
+    return view('admin.addCollector');
+});
+
+Route::get('/admin/viewCollector', function () {
+    return view('admin.viewCollector');
+});
+
+Route::get('/admin/terms', function () {
+    return view('admin.terms');
+});
+
+Route::get('/admin/adminPanel', function () {
+    return view('admin.adminPanel');
 });
 
 Route::get('/dashboard', function () {
@@ -61,14 +67,47 @@ Route::get('/profile', function () {
 });
 
 
+Route::get('creator/home', function () {
+    return view('creator.home');
+});
+
+Route::get('creator/profile', function () {
+    return view('creator.profile');
+});
+
+Route::get('creator/payment', function () {
+    return view('creator.profile_payment');
+});
 
 
+Route::get('creator/collection', function () {
+    return view('creator.collection');
+});
 
-/*Route::get('login', [LoginController::class, 'index']);
-Route::post('login', [LoginController::class, 'login']);
-Route::get('registration', [RegistrationController::class, 'index']);
-Route::get('logout', [RegistrationController::class, 'logout']);
-Route::post('registration', [RegistrationController::class, 'store']);
-Route::get('creative-list', [CreativeListController::class, 'index']);
-Route::get('create-creative', [CreativeListController::class, 'create']);
-*/
+
+Route::get('creator/creation', function () {
+    return view('creator.creation');
+});
+
+Route::get('creator/settings', function () {
+    return view('creator.profile_settings');
+});
+
+
+Route::get('creator/transactions', function () {
+    return view('creator.transactions');
+});
+
+
+Route::get('creator/bids', function () {
+    return view('creator.bid');
+});
+
+
+Route::get('creator/proof_auth', function () {
+    return view('creator.proof_auth');
+});
+
+Route::get('creator/details', function () {
+    return view('creator.details');
+});

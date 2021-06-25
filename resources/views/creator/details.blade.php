@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/details.css')}}">
     @include('includes.head')
     <title>
-        Marketplace
-        <link rel="stylesheet" type="text/css" href="{{asset('css/details.css')}}">
+        details
     </title>
 </head>
 <body>
     @include('includes.nav')
+<<<<<<< HEAD:resources/views/collector/details.blade.php
 
+=======
+    <link rel="stylesheet" type="text/css" href="{{asset('css/details.css')}}">
+>>>>>>> a87a35811ffde37a0a66f940dbc6f3a8c47e9af8:resources/views/creator/details.blade.php
     <div class="container bootdey">
         <div class="col-md-12">
         <section class="panel">
@@ -35,7 +39,7 @@
                           <br>
                           Edition : 3/5
                           <br>
-                          <a href="#" class="">See proof of authenticity</a>
+                          <a href="/creator/proof_auth" class="">See proof of authenticity</a>
                       </p>
                       <div class="product_meta">
                           <span class="posted_in"> <strong>Categories:</strong>
