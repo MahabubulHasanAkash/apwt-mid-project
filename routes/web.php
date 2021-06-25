@@ -28,6 +28,7 @@ Route::post('/collector/signup', 'signupController@collector_signup');
 Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['admin']], function () {
         //write admin routes here
+        
 
 
 
