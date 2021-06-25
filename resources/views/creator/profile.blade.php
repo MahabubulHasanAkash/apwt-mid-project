@@ -15,64 +15,8 @@
     <!-- The Grid -->
     <div class="w3-row-padding">
     
-      <!-- Left Column -->
-      <div class="w3-third">
-      
-        <div class="w3-white w3-text-grey w3-card-4">
-          <div class="w3-display-container">
-            <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" style="width:100%" alt="Avatar">
-            <div class="w3-display-bottomleft w3-container w3-text-black">
-              <h2 style="color:white">Jane Doe</h2>
-            </div>
-          </div>
-          <br>
-          <div class="w3-container">
-            <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-black"></i>Designer</p>
-            <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-black"></i>London, UK</p>
-            <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>ex@mail.com</p>
-            <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>1224435534</p>
-            <hr>
+ @include('includes.profile')
   
-            <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-black"></i>Skills</b></p>
-            <p>Adobe Photoshop</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-black" style="width:90%">90%</div>
-            </div>
-            <p>Photography</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-black" style="width:80%">
-                <div class="w3-center w3-text-white">80%</div>
-              </div>
-            </div>
-            <p>Illustrator</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-black" style="width:75%">75%</div>
-            </div>
-            <p>Media</p>
-            <div class="w3-light-grey w3-round-xlarge w3-small">
-              <div class="w3-container w3-center w3-round-xlarge w3-black" style="width:50%">50%</div>
-            </div>
-            <br>
-  
-            <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-black"></i>Languages</b></p>
-            <p>English</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div class="w3-round-xlarge w3-black" style="height:24px;width:100%"></div>
-            </div>
-            <p>Spanish</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div class="w3-round-xlarge w3-black" style="height:24px;width:55%"></div>
-            </div>
-            <p>German</p>
-            <div class="w3-light-grey w3-round-xlarge">
-              <div class="w3-round-xlarge w3-black" style="height:24px;width:25%"></div>
-            </div>
-            <br>
-          </div>
-        </div><br>
-  
-      <!-- End Left Column -->
-      </div>
   
       <!-- Right Column -->
       <div class="w3-twothird">

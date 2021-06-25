@@ -10,6 +10,13 @@
      </div>
      <br>
      <div class="w3-container">
+      <div class="w3-container">
+        <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-black"></i>Designer</p>
+        <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-black"></i>London, UK</p>
+        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-black"></i>ex@mail.com</p>
+        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-black"></i>1224435534</p>
+        <hr>
+      </div>
        <a href=''>On Sell</p>
        <a href=''>Life Offers</p>
        <a href=''>Sell History</p>
