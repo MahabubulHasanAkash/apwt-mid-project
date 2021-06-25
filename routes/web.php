@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/login', 'auth@index');
+Route::post('/login', 'auth@verifylogin');
+
+Route::get('/creator/signup', 'signupController@creator_index');
+Route::post('/creator/signup', 'signupController@creator_signup');
+Route::get('/collector/signup', 'signupController@collector_index');
+Route::post('/collector/signup', 'signupController@collector_signup');
+
+
+
+
+/*
 Route::get('/login', function () {
     return view('auth.login');
 });
@@ -104,3 +116,4 @@ Route::get('creator/proof_auth', function () {
 Route::get('creator/details', function () {
     return view('creator.details');
 });
+*/

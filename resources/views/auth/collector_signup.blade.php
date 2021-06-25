@@ -29,46 +29,52 @@
     <div class="row row justify-content-md-center mt-3">
         <div class="col-md-6">
             <div class="row justify-content-md-center">
-                <label style="font-size: xx-large;">Creator - Sign Up</label>
+                <label style="font-size: xx-large;">Collecor - Sign Up</label>
             </div>
             <div class="row justify-content-md-center mb-5">
-                <label style="font-size:medium;">Create and sell your unique digital creations.</label>
+                <label style="font-size:medium;">Collect and sell your unique digital creations.</label> 
             </div>
-            <form action="registration" method="post">
+            <div class="row justify-content-md-center mb-5">
+                <a href="/creator/signup" style="font-size:medium; color:rgb(57, 94, 98);">Signup as creator?</a>
+            </div>
+          
+            <form action="/creator/signup" method="post">
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
-                        <input autocomplete="off" class="form-control" id="FullName" name="name" placeholder="Full name" type="text" value="">
+                        <input autocomplete="off" class="form-control" id="name" name="name" placeholder="Name" type="text" value="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
-                        <input autocomplete="off" class="form-control" id="Email" name="email" placeholder="Email address" type="text" value="">
+                        <input autocomplete="off" class="form-control" id="email" name="email" placeholder="Email address" type="email" value="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
-                        <input autocomplete="off" class="form-control" id="Password" name="password" placeholder="Password" type="password" value="">
+                        <input autocomplete="off" class="form-control" id="password" name="password" placeholder="Password" type="password" value="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
-                        <input autocomplete="off" class="form-control" id="ConPassword" name="conpassword" placeholder="Confirm password" type="password" value="">
+                        <input autocomplete="off" class="form-control" id="password_confirmation'" name="password_confirmation'" placeholder="Confirm password" type="password" value="">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
-                        <input type="submit" class="btn btn-block" value="Signup" style="background:black; color: white; font-weight:bold">
+                        <button  class="btn btn-block" value="Signup" style="background:black; color: white; font-weight:bold">Signup </button>
                     </div>
                 </div>
             </form>
 
         </div>
     </div>
+    @if (isset($errors))
+    @foreach ($errors->all() as $error)
+       {{$error}} <br>
+    @endforeach
+    @endif
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>

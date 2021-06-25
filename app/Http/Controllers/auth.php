@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\SignupRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
+class auth extends Controller
+{
+    public function index()
+    {
+        return view('auth.login');
+    }
+
+    public function verifylogin(LoginRequest $req)
+    {
+
+        $userCount = DB::table('user')
+            ->where('email', $req->email)
+            ->where('password', $req->password)
+            ->count();
+        if ($userCount > 0) {
+            $user = DB::table('user')
+                ->where('email', $req->email)
+                ->first();
+            if (password_verify($req->password, $user->password)) {
+                $req->session()->put('user_email', $req->email);
+
+                $req->session()->put('user_type', $user->usertype);
+            } else {
+                $req->session()->flash('msg', 'Wrong Credentials');
+                return redirect('/login');
+            }
+        } else {
+            $req->session()->flash('msg', 'Please register first');
+            return redirect('/login');
+        }
+    }
+}
