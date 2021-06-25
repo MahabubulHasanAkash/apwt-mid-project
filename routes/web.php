@@ -31,9 +31,13 @@ Route::group(['middleware' => ['session']], function () {
 
 
 
-    });
-    Route::group(['middleware' => ['collector']], function () {
-        //write collector routes here
+Route::get('/dashboard', function () {
+    return view('Collector.dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('Collector.profile');
+});
 
 
 
@@ -45,4 +49,31 @@ Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['manager']], function () {
         //write manager routes here
     });
+});
+
+//Collector route----->>>
+
+Route::get('/collector/home', function () {
+    return view('Collector.home');
+});
+
+Route::get('/details', function () {
+    return view('Collector.details');
+});
+
+Route::get('/dashboard', function () {
+    return view('Collector.dashboard');
+});
+
+Route::get('/profile', function () {
+    return view('Collector.profile');
+});
+
+Route::get('/myCollection', 'CollectionController@getCollection');
+
+Route::get('/proof', function () {
+    return view('Collector.proof');
+});
+Route::get('/wallet', function () {
+    return view('Collector.wallet');
 });

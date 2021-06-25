@@ -33,10 +33,12 @@
 
         <div class="col-md-4">
           <div class="thumbnail">
-              <img src="images/{{$item->image}}" alt="Nature" style="width:100%">
+            <a href="/details">  
+            <img src="images/{{$item->image}}" alt="Nature" style="width:100%">
               <div class="caption">
                 <p>{{$item->name}} || {{$item->value}} ETH </p>
               </div>
+            </a>
           </div>
         </div>
             
