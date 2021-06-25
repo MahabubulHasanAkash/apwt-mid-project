@@ -24,13 +24,13 @@ class signupController extends Controller
         DB::table('user')->insert(
             array(
                 'name' => $req->name,
-                'email' => $req->email,
+                'email' => strtolower($req->email),
                 'password' => Hash::make($req->password),
                 'usertype' => 'creator',
             )
         );
         $req->session()->flash('msg', 'Signup Successfull');
-        return redirect()->route('/login');
+        return redirect('/login');
     }
 
     public function collector_signup(SignupRequest $req)
@@ -44,6 +44,6 @@ class signupController extends Controller
             )
         );
         $req->session()->flash('msg', 'Signup Successfull');
-        return redirect()->route('/login');
+        return redirect('/login');
     }
 }

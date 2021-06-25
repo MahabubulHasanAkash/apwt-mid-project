@@ -20,15 +20,16 @@ class auth extends Controller
 
         $userCount = DB::table('user')
             ->where('email', $req->email)
-            ->where('password', $req->password)
             ->count();
         if ($userCount > 0) {
             $user = DB::table('user')
                 ->where('email', $req->email)
                 ->first();
             if (password_verify($req->password, $user->password)) {
+                $usertype =  $user->usertype;
                 $req->session()->put('useremail', $req->email);
-                $req->session()->put('usertype', $user->usertype);
+                $req->session()->put('usertype', $usertype);
+                return redirect('/' . $usertype . '/home');
             } else {
                 $req->session()->flash('msg', 'Wrong Credentials');
                 return redirect('/login');
@@ -37,5 +38,11 @@ class auth extends Controller
             $req->session()->flash('msg', 'Please register first');
             return redirect('/login');
         }
+    }
+
+    public function logout(Request $req)
+    {
+        $req->session()->flush();
+        return redirect('/login');
     }
 }

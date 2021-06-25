@@ -16,7 +16,7 @@ class VerifySession
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->session()->has('user_email'))
+        if ($request->session()->has('useremail'))
             return $next($request);
         else
             $request->session()->flash('msg', 'login first');

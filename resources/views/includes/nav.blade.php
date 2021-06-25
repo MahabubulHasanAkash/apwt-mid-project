@@ -11,7 +11,7 @@
           <a href="/creator/transactions" class="w3-bar-item w3-button">Transactions</a>
           <a href="/creator/payment" class="w3-bar-item w3-button">Payment</a>
           <a href="/creator/bids" class="w3-bar-item w3-button">Bid</a>
-          <a href="/login" class="w3-bar-item w3-button">Logout</a>
+          <a href="/logout" class="w3-bar-item w3-button">Logout</a>
         </div>
       </div>
     <div class="w3-searchbar" style="float:right">
