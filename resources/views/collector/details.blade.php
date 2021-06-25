@@ -20,33 +20,36 @@
               <div class="panel-body">
                   <div class="col-md-6">
                       <div class="pro-img-details">
-                          <img src="images/art01.jpg" width="80%" alt="">
+                          <img src="/images/{{$item->image}}" width="80%" alt="Art {{$item->id}}">
                       </div>
                   </div>
                   <div class="col-md-6">
                       <h4 class="pro-d-title">
                           <a href="#" class="">
-                              Cat gif
+                            {{$item->name}}
                           </a>
                       </h4>
-                      <p>
+                      <p id="txt">
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                       </p>
+                    <p id="txt">
                           <br>
-                          Creator : Mr Bean
+                          Creator : {{$item->creator}}
                           <br>
-                          Edition : 3/5
+                          Edition : {{$item->edition}}
                           <br>
                           <a href="/proof" class=""><h4>See proof of authenticity</h4></a>
-                      </p>
+                    </p>
                       <div class="product_meta">
-                          <span class="posted_in"> <strong>Categories:</strong>
-                             <a rel="tag" href="#">Digital Art</a>
+                        <p id="txt">
+                          <span class="posted_in"> <strong>Categories: </strong>
+                             <a rel="tag" href="#">Digital Art </a>
+                        </p>
                           
                       </div>
-                      <div class="m-bot15"> <strong>Initial Price : </strong> <span class="amount-old">2.5 ETH<br></span>
+                      <div class="m-bot15"> <strong> Initial Price : </strong> <span class="amount-old">{{$item->value}} ETH<br></span>
                       <div class="form-group">
-                         <label>Make an Offer</label><br>
+                         <label Class="makeoffer">Make an Offer</label><br>
                           <input type="quantiy" placeholder="Min:0.05 ETH" class="form-control quantity">
                       </div>
                       <p>

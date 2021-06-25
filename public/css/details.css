@@ -74,7 +74,7 @@ body{margin-top:20px;
         height: 50px;
         border-radius: 50%;
         -webkit-border-radius: 50%;
-        color: #fff;
+        color: rgb(179, 33, 33);
         display: inline-block;
         text-align: center;
         border: 3px solid #fff;
@@ -84,7 +84,7 @@ body{margin-top:20px;
     }
     
     .adtocart i{
-        color: #fff;
+        color: rgb(201, 57, 57);
         font-size: 25px;
         line-height: 42px;
     }
@@ -155,4 +155,15 @@ body{margin-top:20px;
     .pro-d-head {
         font-size: 18px;
         font-weight: 300;
+    }
+
+    #txt{
+        color: #2A3542;
+    }
+    .m-bot15{
+        color: #fc5959;
+        font-size: 15px;
+    }
+    .makeoffer{
+        color: midnightblue;
     }

@@ -11,7 +11,7 @@
   
 </div>
 <ul>
-  <li><a href="#logout">Logout</a></li>
+  <li><a href="/logout">Logout</a></li>
   <li><a href="#contact">Contact</a></li>
 
   <li>
@@ -34,7 +34,7 @@
         <div class="admin-img">
           <img src="../images/icon2.jpg" class="image">
             <div class="middle">
-              <div class="text"><a href="/myCollection"> COLLECTION </a></div>
+              <div class="text"><a href="myCollection"> COLLECTION </a></div>
             </div>
         </div>       
       </div>

@@ -12,11 +12,6 @@
 </head>
 <body>
     @include('includes.nav')
-<<<<<<< HEAD:resources/views/collector/details.blade.php
-
-=======
-    <link rel="stylesheet" type="text/css" href="{{asset('css/details.css')}}">
->>>>>>> a87a35811ffde37a0a66f940dbc6f3a8c47e9af8:resources/views/creator/details.blade.php
     <div class="container bootdey">
         <div class="col-md-12">
         <section class="panel">

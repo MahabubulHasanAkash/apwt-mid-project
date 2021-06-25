@@ -27,17 +27,9 @@ Route::post('/collector/signup', 'signupController@collector_signup');
 
 Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['admin']], function () {
+        
+        
         //write admin routes here
-
-
-
-Route::get('/dashboard', function () {
-    return view('Collector.dashboard');
-});
-
-Route::get('/profile', function () {
-    return view('Collector.profile');
-});
 
 
 
@@ -51,25 +43,17 @@ Route::get('/profile', function () {
     });
 });
 
+
+
 //Collector route----->>>
 
-Route::get('/collector/home', function () {
-    return view('Collector.home');
-});
 
-Route::get('/details', function () {
-    return view('Collector.details');
-});
+Route::get('/details/{id}', 'col_detailsController@getDetails');
 
-Route::get('/dashboard', function () {
-    return view('Collector.dashboard');
-});
-
-Route::get('/profile', function () {
-    return view('Collector.profile');
-});
-
-Route::get('/myCollection', 'CollectionController@getCollection');
+Route::get('/collector/home', 'col_homeController@getItems');
+Route::get('/collector/dashboard', 'col_dashboardController@index');
+Route::get('/profile', 'col_profileController@index');
+Route::get('/myCollection', 'CollectionController@getCollection')->name('myCollection');
 
 Route::get('/proof', function () {
     return view('Collector.proof');

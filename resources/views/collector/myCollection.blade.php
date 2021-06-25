@@ -17,7 +17,7 @@
           
     </div>
         <ul>
-          <li><a href="#logout">Logout</a></li>
+          <li><a href="/logout">Logout</a></li>
           <li><a href="#contact">Contact</a></li>
         
           <li>
