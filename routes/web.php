@@ -53,7 +53,7 @@ Route::get('/profile', function () {
 
 //Collector route----->>>
 
-Route::get('/home', function () {
+Route::get('/collector/home', function () {
     return view('Collector.home');
 });
 
