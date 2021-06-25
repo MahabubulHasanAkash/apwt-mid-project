@@ -57,7 +57,7 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-    @include('includes.nav');
+  @include('includes.adminNav');
     
 <body class="w3-light-grey">
 
@@ -72,54 +72,47 @@ tr:nth-child(even) {
   
       <!-- Right Column -->
       <div class="w3-twothird">
-  
-        @include('includes.adminButton')
-          
-            
-            
-            
-                        
-          </div><br><br>
-          
-            <h4 class="w3-opacity">Add Creator</h4><br>
-            
-          <form action="registration" method="post" >
-            
-            @csrf
-            
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input autocomplete="off" class="form-control" id="FullName" name="name" placeholder="Full name" type="text" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input autocomplete="off" class="form-control" id="Email" name="email" placeholder="Email address" type="text" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input autocomplete="off" class="form-control" id="ContactNumber" name="contactNumber" placeholder="Contact Number" type="text" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input autocomplete="off" class="form-control" id="Password" name="password" placeholder="Password" type="password" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input autocomplete="off" class="form-control" id="ConPassword" name="conpassword" placeholder="Confirm password" type="password" value="">
-                </div>
-            </div>
-            <div class="form-group row">
-                <div class="col-md-8 offset-md-2">
-                    <input type="submit" class="btn " style="float: right;background: #008B8B; color: white;font-weight:bold" value="Registration"   >
-                </div>
-            </div>
-            
-            
-        </form>
+
+      <div class="w3-container w3-card w3-white"><br>  
+        <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
+        <div class="w3-searchbar" style="float:right">
+          <input type="text" placeholder="Search.." name="search">
+          <button type="submit"><i class="fa fa-search"></i></button><br>
+      </div><br><br><br>
+         
+      <p class="fa fa-edit w3-large"> Add Creator</p> <br> <br>  
+      <table>
+        <tr>
+          <td>Name</td>
+          <td><input type="text" name="uname"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="text" name="email"></td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" name="address"></td>
+        </tr>
+        <tr>
+          <td>Contact Number</td>
+          <td><input type="text" name="contactNumber"></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><input type="Password" name="password"></td>
+        </tr>
+        <tr>
+          <td>Picture</td>
+          <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><br><input type="Submit" name="submit"></td>
+        </tr>
+        
+      </table><br>
+      </div><br><br>
                 
     </div>
           

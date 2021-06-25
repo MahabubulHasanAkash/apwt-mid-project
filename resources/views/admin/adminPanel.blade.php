@@ -150,7 +150,7 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-    @include('includes.nav');
+    @include('includes.adminNav');
     
 <body class="w3-light-grey">
 
@@ -165,13 +165,17 @@ tr:nth-child(even) {
   
       <!-- Right Column -->
       <div class="w3-twothird">
-        @include('includes.adminButton')          
+        <div class="w3-container w3-card w3-white"><br> 
+          <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a> 
+          <div class="w3-searchbar" style="float:right">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button><br>
+        </div><br><br><br>          
                         
-          </div><br>
-          
-          
+        <p class="fa fa-users w3-large"> Admin Panel</p> <br> <br>
+         
           <div class="w3-container w3-padding "><br>
-            <h6 class="w3-opacity">Admin Panel</h6>
+            <h6 class="w3-opacity">Admin List</h6>
             <table>
               <tr>
                 <th>Name</th>
@@ -202,6 +206,7 @@ tr:nth-child(even) {
             <button class="w3-button w3-green"style="float: right;"><i class="fa fa-plus-square-o w3-margin-right"></i>Add Admin</button><br><br><br><br>
           </div>
         </div>
+      </div><br>
   
       <!-- End Right Column -->
       </div>
