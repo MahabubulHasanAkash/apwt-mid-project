@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class adminHome extends Controller
+class creatorHome extends Controller
 {
     public function index()
     {

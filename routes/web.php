@@ -27,19 +27,22 @@ Route::post('/collector/signup', 'signupController@collector_signup');
 
 Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['admin']], function () {
-        //write admin functionality here
+        //write admin routes here
+
+
+
     });
     Route::group(['middleware' => ['collector']], function () {
-        //write collector functionality here
+        //write collector routes here
 
 
 
     });
     Route::group(['middleware' => ['creator']], function () {
-        //write creator functionality here
-        Route::get('/creator/home', 'adminHome@index');
+        //write creator routes here
+        Route::get('/creator/home', 'creatorHome@index');
     });
     Route::group(['middleware' => ['manager']], function () {
-        //write manager functionality here
+        //write manager routes here
     });
 });
