@@ -62,6 +62,12 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">
+                      <label> By signing up you are accepting our <a href="" > terms & condition </a> and you have read <a href="">
+                       Privacy policy </a> including our cookie use</label> 
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-8 offset-md-2">
                         <button  class="btn btn-block" value="Signup" style="background:black; color: white; font-weight:bold">Signup </button>
                     </div>
                 </div>

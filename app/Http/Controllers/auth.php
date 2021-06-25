@@ -27,9 +27,8 @@ class auth extends Controller
                 ->where('email', $req->email)
                 ->first();
             if (password_verify($req->password, $user->password)) {
-                $req->session()->put('user_email', $req->email);
-
-                $req->session()->put('user_type', $user->usertype);
+                $req->session()->put('useremail', $req->email);
+                $req->session()->put('usertype', $user->usertype);
             } else {
                 $req->session()->flash('msg', 'Wrong Credentials');
                 return redirect('/login');
