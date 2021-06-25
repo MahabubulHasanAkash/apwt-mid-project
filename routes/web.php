@@ -17,46 +17,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/login', function () {
-    return view('auth.login');
-});
+Route::get('/login', 'auth@index');
+Route::post('/login', 'auth@verifylogin');
+Route::get('/logout', 'auth@logout');
+Route::get('/creator/signup', 'signupController@creator_index');
+Route::post('/creator/signup', 'signupController@creator_signup');
+Route::get('/collector/signup', 'signupController@collector_index');
+Route::post('/collector/signup', 'signupController@collector_signup');
 
-Route::get('/signup', function () {
-    return view('auth.signup');
-});
+Route::group(['middleware' => ['session']], function () {
+    Route::group(['middleware' => ['admin']], function () {
+        //write admin routes here
 
 
-Route::get('/admin/myProfile', function () {
-    return view('admin.myProfile');
-});
-
-Route::get('/admin/editProfile', function () {
-    return view('admin.editProfile');
-});
-
-Route::get('/admin/addCreator', function () {
-    return view('admin.addCreator');
-});
-
-Route::get('/admin/viewCreator', function () {
-    return view('admin.viewCreator');
-});
-
-Route::get('/admin/addCollector', function () {
-    return view('admin.addCollector');
-});
-
-Route::get('/admin/viewCollector', function () {
-    return view('admin.viewCollector');
-});
-
-Route::get('/admin/terms', function () {
-    return view('admin.terms');
-});
-
-Route::get('/admin/adminPanel', function () {
-    return view('admin.adminPanel');
-});
 
 Route::get('/dashboard', function () {
     return view('Collector.dashboard');
@@ -67,47 +40,40 @@ Route::get('/profile', function () {
 });
 
 
-Route::get('creator/home', function () {
-    return view('creator.home');
+
+    });
+    Route::group(['middleware' => ['creator']], function () {
+        //write creator routes here
+        Route::get('/creator/home', 'creatorHome@index');
+    });
+    Route::group(['middleware' => ['manager']], function () {
+        //write manager routes here
+    });
 });
 
-Route::get('creator/profile', function () {
-    return view('creator.profile');
+//Collector route----->>>
+
+Route::get('/home', function () {
+    return view('Collector.home');
 });
 
-Route::get('creator/payment', function () {
-    return view('creator.profile_payment');
+Route::get('/details', function () {
+    return view('Collector.details');
 });
 
-
-Route::get('creator/collection', function () {
-    return view('creator.collection');
+Route::get('/dashboard', function () {
+    return view('Collector.dashboard');
 });
 
-
-Route::get('creator/creation', function () {
-    return view('creator.creation');
+Route::get('/profile', function () {
+    return view('Collector.profile');
 });
 
-Route::get('creator/settings', function () {
-    return view('creator.profile_settings');
+Route::get('/myCollection', 'CollectionController@getCollection');
+
+Route::get('/proof', function () {
+    return view('Collector.proof');
 });
-
-
-Route::get('creator/transactions', function () {
-    return view('creator.transactions');
-});
-
-
-Route::get('creator/bids', function () {
-    return view('creator.bid');
-});
-
-
-Route::get('creator/proof_auth', function () {
-    return view('creator.proof_auth');
-});
-
-Route::get('creator/details', function () {
-    return view('creator.details');
+Route::get('/wallet', function () {
+    return view('Collector.wallet');
 });

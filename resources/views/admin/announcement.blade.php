@@ -56,9 +56,9 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-    @include('includes.adminNav');
+    @include('includes.adminNav')<br>
     
-<body class="w3-light-grey">
+
 
   <!-- Page Container -->
   <div class="w3-content w3-margin-top" style="max-width:1400px;">
@@ -67,53 +67,68 @@ tr:nth-child(even) {
     <div class="w3-row-padding">
     
       <!-- Left Column -->
-      @include('includes.adminSideBar');
+      @include('includes.adminSideBar')
   
       <!-- Right Column -->
-      <div class="w3-twothird">
+      <div class="w3-twothird">   
+                
         <div class="w3-container w3-card w3-white"><br>  
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
-          <div class="w3-searchbar" style="float:right">
+            <div class="w3-searchbar" style="float:right">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-        </div><br><br><br>          
-                        
+        </div><br><br><br>
+
+        <p class="fa fa-bullhorn w3-large"> Announcement</p> <br> <br>   
+        
+               
+        <form method="post">
+            <table>
+                <tr>
+                    <td><b>Title</b></td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <td><b>Details</b></td>
+                    {{-- <td><input type="text" name="announcement"></td> --}}
+                
+                    <td><textarea name="announcement" rows="8" cols="50"></textarea></td>
+                    
+                </tr>
+                
+            </table><br><input style="float: right;" type="Submit" name="submit"><br>
           
-        <p class="fa fa-users w3-large"> View Collectors</p> <br> <br>
-          
+            </form><br>
+        
+      
+
+                 
           <div class="w3-container w3-padding "><br>
-            <h6 class="w3-opacity">Collectors</h6>
+            <h6 class="w3-opacity">Announcements</h6>
             <table>
               <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Contact Number</th>
-                <th>Action</th>
+                <th>Title</th>
+                <th>Details</th>    
+                <th></th>
                 <th></th>
               </tr>
               <tr>
                 
-                <td>Anik</td>
-                <td>Anik@gmail.com</td>
-                <td>0177777777</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
-
-              </tr>
-              <tr>
+                <td>About Tonight</td>
+                <td>There will be a serprise tonight. Please be available at 9 pm.</td>
                 
-                <td>Akash</td>
-                <td>Akash@gmail.com</td>
-                <td>01888888888</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
+                <td><a href="admin/announcement/{announcement}/edit">Edit</a></td>
+                <td><a href="admin/announcement/{announcement}">Delete</a></td>
 
               </tr>
+              
             </table><br><br>
-            <button class="w3-button w3-green"style="float: right;"><i class="fa fa-plus-square-o w3-margin-right"></i>Add Collector</button><br><br><br><br>
+            <br><br><br><br>
           </div>
         </div>
       </div><br>
+    </div><br><br><br>
+        </div><br>
   
       <!-- End Right Column -->
       </div>
@@ -122,7 +137,7 @@ tr:nth-child(even) {
     </div>
     
     <!-- End Page Container -->
-  </div><br>
+  </div><br><br>
 
 
 
