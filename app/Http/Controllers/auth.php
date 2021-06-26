@@ -28,6 +28,8 @@ class auth extends Controller
             if (password_verify($req->password, $user->password)) {
                 $usertype =  $user->usertype;
                 $req->session()->put('useremail', $req->email);
+                $req->session()->put('id', $user->id);
+                $req->session()->put('name', $user->name);
                 $req->session()->put('usertype', $usertype);
                 return redirect('/' . $usertype . '/home');
             } else {

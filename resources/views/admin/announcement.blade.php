@@ -86,13 +86,14 @@ tr:nth-child(even) {
             <table>
                 <tr>
                     <td><b>Title</b></td>
-                    <td><input type="text" name="title"></td>
+                    <td><input type="text" class="form-control" name="title" value=""></td>
+                    
                 </tr>
                 <tr>
                     <td><b>Details</b></td>
                     {{-- <td><input type="text" name="announcement"></td> --}}
                 
-                    <td><textarea name="announcement" rows="8" cols="50"></textarea></td>
+                    <td><textarea type="text" name="details" class="form-control" value="" rows="6" cols="100"></textarea></td>
                     
                 </tr>
                 
@@ -104,15 +105,32 @@ tr:nth-child(even) {
 
                  
           <div class="w3-container w3-padding "><br>
+           
             <h6 class="w3-opacity">Announcements</h6>
             <table>
               <tr>
                 <th>Title</th>
                 <th>Details</th>    
-                <th></th>
-                <th></th>
-              </tr>
-              <tr>
+                <th>Action</th>
+                
+              </tr> 
+              @foreach ($announcementList as $announcements) 
+
+            <tr>
+              
+            <td>{{$announcements['title']}}</td>
+			      <td>{{$announcements['details']}}</td>
+            
+            <td>   
+                <a href="/announcement/edit/{id}{{$announcements['id']}}"> Edit</a> |
+                <a href="/announcement/delete/{id}{{$announcements['id']}}"> Delete</a>
+            </td>
+		        </tr>
+            
+            
+            
+            @endforeach
+              {{-- <tr>
                 
                 <td>About Tonight</td>
                 <td>There will be a serprise tonight. Please be available at 9 pm.</td>
@@ -120,7 +138,7 @@ tr:nth-child(even) {
                 <td><a href="admin/announcement/{announcement}/edit">Edit</a></td>
                 <td><a href="admin/announcement/{announcement}">Delete</a></td>
 
-              </tr>
+              </tr> --}}
               
             </table><br><br>
             <br><br><br><br>

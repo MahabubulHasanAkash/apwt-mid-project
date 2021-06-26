@@ -28,7 +28,23 @@ Route::post('/collector/signup', 'signupController@collector_signup');
 Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['admin']], function () {
         //write admin routes here
-        
+        Route::get('/admin/home', 'adminHome@index')->middleware('session');
+
+        Route::get('/admin/editProfile/{id}', 'adminController@edit');
+        Route::post('/admin/editProfile/{id}', 'adminController@update');
+
+        Route::get('/admin/adminPanel', 'adminController@view');
+
+        Route::get('/admin/terms', 'TermsController@view');
+        Route::post('/admin/terms', 'TermsController@update');
+
+        Route::get('/admin/announcement', 'announcementController@view');
+        Route::post('/admin/announcement', 'announcementController@insert');
+        Route::post('/admin/announcement/edit{id}', 'announcementController@edit');
+        Route::post('/admin/announcement/delete{id}', 'announcementController@delete');
+
+        Route::get('/admin/viewCreator', 'adminController@viewCreators');
+        Route::get('/admin/viewCollector', 'adminController@viewCollectors');
 
 
 

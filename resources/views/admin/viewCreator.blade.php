@@ -83,31 +83,30 @@
             <table>
               <tr>
                 <th>Name</th>
-                <th>Email</th>
-                <th>Contact Number</th>
+                <th>Email</th>           
                 <th>Action</th>
-                <th></th>
-              </tr>
-              <tr>
                 
-                <td>Anik</td>
-                <td>Anik@gmail.com</td>
-                <td>0177777777</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
-
               </tr>
-              <tr>
-                
-                <td>Akash</td>
-                <td>Akash@gmail.com</td>
-                <td>01888888888</td>
-                <td><a href="#">Edit</a></td>
-                <td><a href="#">Delete</a></td>
 
-              </tr>
+              @foreach ($adminList as $admins) 
+
+              
+            <tr>
+              
+            <td>{{$admins['name']}}</td>
+			      <td>{{$admins['email']}}</td>
+            
+            <td>   
+                <a href="/user/edit/{{$admins['id']}}"> Edit</a> |
+                <a href="/user/delete/{{$admins['id']}}"> Delete</a>
+            </td>
+		        </tr>
+            
+            
+            
+            @endforeach
             </table><br><br>
-            <button class="w3-button w3-green"style="float: right;"><i class="fa fa-plus-square-o w3-margin-right"></i>Add Creator</button><br><br><br><br>
+            <br><br><br><br>
           </div>
         </div>
       </div><br>
