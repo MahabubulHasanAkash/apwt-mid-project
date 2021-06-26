@@ -34,7 +34,7 @@
         <div class="admin-img">
           <img src="../images/icon2.jpg" class="image">
             <div class="middle">
-              <div class="text"><a href="myCollection"> COLLECTION </a></div>
+              <div class="text"><a href="/myCollection"> COLLECTION </a></div>
             </div>
         </div>       
       </div>

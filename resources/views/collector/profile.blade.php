@@ -17,8 +17,8 @@
 		<li><a href="#about">About</a></li>
 		<li><a href="#about">Blog</a></li>
 		<li><a href="#contact">Contact</a></li>
-		<li><a href="/home">Home</a></li>
-		<li><a href="/dashboard">Dashboard</a></li>
+		<li><a href="/collector/home">Home</a></li>
+		<li><a href="/collector/dashboard">Dashboard</a></li>
 
 	</ul>
 	<!--<form action="../php/profile_picturecheck.php" method="post" enctype="multipart/form_data">-->
@@ -27,14 +27,14 @@
 	<div class="card">
 
 		<img src="images/imgmale.png" alt="John" style="width:95%">
-		<h1>Ahmed Afridi</h1>
-		<p class="title">Collector</p>
-		<div class="info"><i class="fas fa-envelope-open-text"></i>&nbsp;&nbsp;afridi@gmail.com</div>
-		<div class="info"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;01777888899</div>
-		<div class="info"><i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;22 May 1999</div>
-		<div class="info"><i class="fas fa-venus-mars"></i>&nbsp;&nbsp;Male</div>
-		<div class="info"><i class="fas fa-map-marked"></i>&nbsp;&nbsp;Dhanmondi, Dhaka</div>
-		<div class="info"><i class="fas fa-user-edit"></i><a href="#update">o</a>Update</div>
+		<h1>{{$user->name}}</h1>
+		<p class="title">{{$user->usertype}}</p>
+		<div class="info"><i class="fas fa-envelope-open-text"></i>&nbsp;&nbsp;{{$user->email}}</div>
+		<div class="info"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;{{$user->phone}}</div>
+		<div class="info"><i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;{{$user->dob}}</div>
+		<div class="info"><i class="fas fa-venus-mars"></i>&nbsp;&nbsp;{{$user->gender}}</div>
+		<div class="info"><i class="fas fa-map-marked"></i>&nbsp;&nbsp;{{$user->address}}</div>
+		<div class="info"><i class="fas fa-user-edit"></i><a href="/collector/profileUpdate/{{$user->id}}">o</a>Update</div>
 	</div>
 
 

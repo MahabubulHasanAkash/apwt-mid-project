@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
+
 Route::get('/profile', function () {
     return view('creator.profile');
 });
@@ -53,7 +58,9 @@ Route::get('/details/{id}', 'col_detailsController@getDetails');
 Route::get('/collector/home', 'col_homeController@getItems');
 Route::get('/collector/dashboard', 'col_dashboardController@index');
 Route::get('/profile', 'col_profileController@index');
-Route::get('/myCollection', 'CollectionController@getCollection')->name('myCollection');
+Route::get('/collector/profileUpdate/{id}', 'Col_profileController@update');
+Route::get('/myCollection', 'CollectionController@getCollection');
+
 
 Route::get('/proof', function () {
     return view('Collector.proof');

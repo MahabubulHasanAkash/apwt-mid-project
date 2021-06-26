@@ -13,8 +13,16 @@ class col_homeController extends Controller
 
     public function getItems(Request $req){
 
-        $item = DB::table('art_details')->get();
+        if($req->session()->has('useremail')){
+            $item = DB::table('art_details')->get();
         return view('collector.home')->with('item', $item);
+
+        }
+        else{
+            return redirect('/login')->with('msg', 'You Have to login First!');
+        }
+
+        
 
     }
 
