@@ -43,7 +43,7 @@
         <div class="admin-img">
           <img src="../images/icon4.jpg" class="image">
           <div class="middle">
-            <div class="text"><a href="##">MARKETPLACE</a></div>
+            <div class="text"><a href="#history">HISTORY</a></div>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@
         <div class="admin-img">
         <img src="../images/icon3.jpg" class="image">
           <div class="middle">
-            <div class="text"><a href="##">HISTORY</a></div>
+            <div class="text"><a href="/wallet">WALLET</a></div>
           </div>  
         </div>     
       </div>
