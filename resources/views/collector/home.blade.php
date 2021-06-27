@@ -8,6 +8,10 @@
     <title>Marketplace</title>
 </head>
 <body>
+
+    <style>
+        body{background-image: linear-gradient(to bottom, #407587, #427280, #456f79, #476b72, #4a686c, #4e7075, #51797d, #558186, #5998a1, #5cafbd, #5ec7db, #5fdffb);}
+    </style>
     @include('includes.col_nav')
     <div class="container">
        <br>
@@ -21,7 +25,7 @@
               </div>
             </div>
           </div>
-        <h3 style="display: inline-block">nftPlace<h3>  
+        <h3 style="display: inline-block">Featured<h3>  
         <div class="row">
 
           @foreach ($item as $items)

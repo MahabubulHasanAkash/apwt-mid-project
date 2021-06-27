@@ -9,7 +9,7 @@ class col_detailsController extends Controller
 {
     public function getDetails($id){
         
-        $item = DB::table('art_details')
+        $item = DB::table('nft')
                 ->where('id', $id)->first();
         return view('collector.details')->with('item', $item);
 

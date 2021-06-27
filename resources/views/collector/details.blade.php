@@ -14,7 +14,8 @@
 </head>
 <body>
     
-    @include('includes.nav')
+    @include('includes.col_nav')
+
 
     <div class="container bootdey">
         <div class="col-md-12">
@@ -27,12 +28,12 @@
                   </div>
                   <div class="col-md-6">
                       <h4 class="pro-d-title">
-                          <a href="#" class="">
-                            {{$item->name}}
+                          <a href="#">
+                            <p class="item-name">{{$item->name}}</p>
                           </a>
                       </h4>
                       <p id="txt">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {{$item->desc}}
                       </p>
                     <p id="txt">
                           <br>
@@ -50,20 +51,27 @@
                           
                       </div>
                       <div class="m-bot15"> <strong> Initial Price : </strong> <span class="amount-old">{{$item->value}} ETH<br></span>
-                      <div class="form-group">
-                         <label Class="makeoffer">Make an Offer</label><br>
-                          <input type="quantiy" placeholder="Min:0.05 ETH" class="form-control quantity">
-                      </div>
-                      <p>
-                          <button class="btn btn-round btn-danger" type="button"></i> Submit</button>
-                      </p>
+                        
+                        
+                        <form action="/purchase/{{$item->id}}" method="POST">
+                        
+                          <div class="form-group">
+                            <label Class="makeoffer">Make an Offer</label><br>
+                            <input type="number" step="0.01" name="givenvalue" placeholder="Min:{{$item->value}} ETH" class="form-control quantity">
+                          </div>
+                          <p>
+                              <button class="btn btn-round btn-danger" value="purchase" ></i> Submit</button>
+                              <input type="button" value="Submit">
+                          </p>
+                        </form>
                   </div>
               </div>
           </section>
           </div>
 
+
                     <!-- Classic tabs -->
-                    <div class="w3-bar w3-white" align="center">
+                    <div class="w3-bar tabs" align="center">
                       <button class="w3-bar-item w3-button" onclick="openCity('London')">Comments</button>
                       <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Additional Details</button>
                       <button class="w3-bar-item w3-button" onclick="openCity('Tokyo')">Recent Activity</button>
@@ -73,8 +81,8 @@
                       <textarea name="comment" id="comment" cols="40" rows="3"></textarea></><br>
                       <a href="#comment" class="button">Comment</a>
                       {{--Comments--}}
-                      <p>Raihan Mahmud</p>
-                      <p>Awesome &#128558; &#128558;</p>
+                      <p class="commentor">&#128112; Raihan Mahmud</p>
+                      <p class="comment-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Awesome &#128558; &#128558;</p>
                     </div>
                     
                     <div id="Paris" class="w3-container city" style="display:none">

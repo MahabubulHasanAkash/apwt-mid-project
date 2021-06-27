@@ -56,7 +56,7 @@ li a:hover {
 
 <ul>
     
-    <li><a href="##">Logout</a></li>
+    <li><a href="/logout">Logout</a></li>
     <li><a href="/collector/home">Home</a></li>
     <li><a href="/collector/dashboard">Dashboard</a></li>
 

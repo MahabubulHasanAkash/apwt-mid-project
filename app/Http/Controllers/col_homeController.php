@@ -14,7 +14,7 @@ class col_homeController extends Controller
     public function getItems(Request $req){
 
         if($req->session()->has('useremail')){
-            $item = DB::table('art_details')->get();
+            $item = DB::table('nft')->get();
         return view('collector.home')->with('item', $item);
 
         }

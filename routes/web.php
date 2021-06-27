@@ -54,6 +54,7 @@ Route::group(['middleware' => ['session']], function () {
 
 
 Route::get('/details/{id}', 'col_detailsController@getDetails');
+Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
 
 Route::get('/collector/home', 'col_homeController@getItems');
 Route::get('/collector/dashboard', 'col_dashboardController@index');
@@ -62,6 +63,7 @@ Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
 
 Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
 Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
+
 
 
 

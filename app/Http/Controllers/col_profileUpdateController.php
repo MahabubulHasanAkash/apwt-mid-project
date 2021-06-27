@@ -22,7 +22,13 @@ class col_profileUpdateController extends Controller
 
         DB::table('user')
                 ->where( 'email', $email)
-                ->update(['name' => $req->name, 'phone' => $req->phone, 'email' => $req->email]);
+                ->update([
+                        'name' => $req->name,
+                        'phone' => $req->phone,
+                        'email' => $req->email,
+                        'dob' => $req->dob,
+                        'address' => $req->address
+                        ]);
         
         $user = DB::table('user')
                 ->where( 'email', $email)->first();

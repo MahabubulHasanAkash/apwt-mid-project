@@ -11,7 +11,14 @@
 
 </head>
 <body>
-@include('includes.header')
+    @include('includes.header')
+
+    <style>
+        body{background-color: #2ec4b6;
+        }
+
+    </style>
+
     <div class="row">
         <div class="col-md-6">
             <label class="p-5" style="font-size: 40px; font-weight: bold; text-align:center; padding-top:80px !important;">
@@ -42,6 +49,10 @@
                         @endforeach
                         @endif
 
+                        <h3 style="color: red">
+                            {{session('msg')}}
+                        </h3>
+
                     </form>
                 </div>
             </div>
@@ -49,10 +60,6 @@
     </div>
 
 
-
-    <h3 style="color: red">
-        {{session('msg')}}
-    </h3>
 </body>
 
 </html>
