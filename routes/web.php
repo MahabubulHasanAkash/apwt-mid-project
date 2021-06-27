@@ -57,9 +57,12 @@ Route::get('/details/{id}', 'col_detailsController@getDetails');
 
 Route::get('/collector/home', 'col_homeController@getItems');
 Route::get('/collector/dashboard', 'col_dashboardController@index');
-Route::get('/profile', 'col_profileController@index');
-Route::get('/collector/profileUpdate/{id}', 'Col_profileController@update');
 Route::get('/myCollection', 'CollectionController@getCollection');
+Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
+
+Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
+Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
+
 
 
 Route::get('/proof', function () {

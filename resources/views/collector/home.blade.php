@@ -8,7 +8,7 @@
     <title>Marketplace</title>
 </head>
 <body>
-    @include('includes.collectorNav')
+    @include('includes.col_nav')
     <div class="container">
        <br>
         <div class="w3-right">
@@ -44,5 +44,5 @@
         </div>
       </div>
 </body>
-@include('includes.footer')
+@include('includes.footer1')
 </html>

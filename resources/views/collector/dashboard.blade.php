@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 </head>
 
@@ -15,7 +16,7 @@
   <li><a href="#contact">Contact</a></li>
 
   <li>
-    <a href="/wallet">Wallet</a>
+    <a href="/collector/home">Marketplace</a>
   </li>
   <li><a href="##">Home</a></li>
 </ul>

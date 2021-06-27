@@ -19,7 +19,7 @@ class col_profileController extends Controller
         return view('Collector.profile')->with('user', $user);
     }
 
-    public function update(){
-        return view('collector.updateProfile');
-    }
+    
+
+    
 }
