@@ -63,24 +63,15 @@ class adminController extends Controller
 
     public function edit(Request $req, $id)
     {
-        // $admin = User::find($id);
-        // return view('admin.editProfile')->with('admin',$admin);
-        //return view('admin.editProfile');
+        
+        $a_id = $req->session()->get('id');
+            $user=User::find($a_id);
 
-            $a_id = $req->session()->get('id');
-            $a_name = $req->session()->get('name');
-            $a_password = $req->session()->get('password');
-            $a_email = $req->session()->get('useremail');
+        return view('admin.editProfile',$user);
 
-        return view('admin.editProfile')
-        ->with('id',$a_id)
-        ->with('name',$a_name)
-        ->with('password',$a_password)
-        ->with('useremail',$a_email);
-
-        $adminEdit = DB::table('user')
-            ->where('id', $id);
-            return view('admin.editProfile');
+        // $adminEdit = DB::table('user')
+        //     ->where('id', $id);
+        //     return view('admin.editProfile');
 
         
     }
@@ -88,12 +79,29 @@ class adminController extends Controller
     public function update(Request $req, $id)
     {
         
-        // DB::table('user')
-        //     ->where('id', $id)
-        //     ->update(['name' => $req->name, 'password' => $req->password, 'useremail' => $req->useremail ]);
+    //     DB::table('user')
+    //         ->where('id', $id)
+    //         ->update(['name' => $req->name, 'password' => $req->password, 'useremail' => $req->useremail ]);
 
-       // return view('user.edit')->with('user',$user);
-       return redirect()->route('admin.home');
+    //    return view('user.edit')->with('user',$user);
+
+       
+       if ($req->hasFile('image')) 
+       {
+        $file = $req->file('image');
+        $image_name = rand() . '.' . $file->extension();
+            if ($file->move('upload', $image_name)) 
+            {
+                DB::table('user')
+                ->where('id', $id)
+                ->update(['name' => $req->name, 'password' => $req->password, 'email' => $req->email, 'phone' => $req->phone, 'profileImage' => $image_name ]);
+                return redirect('/admin/home');
+            }
+        return back();
+        }
+
+
+       
     }
 
     public function delete($id)
@@ -155,7 +163,21 @@ class adminController extends Controller
         
         return view ('admin.viewCreator')->with('adminList',$admins);
     }
+    public function deleteCreator(Request $req, $id)
+    {
+        
+        // DB::table('announcement')          
+        // ->insert(['title' => $req->title, 'details' => $req->details ]);
+        
+        //return redirect()->route('admin.announcement');
+        DB::table('user')
+            ->where('id', $id)
+            ->delete();
+        
+        return redirect('admin/viewCreator');
+    
 
+    }
     public function viewCollectors()
     {
         $admins = User::where('usertype', 'collector')->get();
@@ -163,7 +185,21 @@ class adminController extends Controller
         return view ('admin.viewCollector')->with('adminList',$admins);
     }
 
+    public function deleteCollector(Request $req, $id)
+    {
+        
+        // DB::table('announcement')          
+        // ->insert(['title' => $req->title, 'details' => $req->details ]);
+        
+        //return redirect()->route('admin.announcement');
+        DB::table('user')
+            ->where('id', $id)
+            ->delete();
+        
+        return redirect('/admin/viewCollector');
     
+
+    }
 
     
 }

@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,12 +21,14 @@ Route::get('/logout', 'auth@logout');
 Route::get('/creator/signup', 'signupController@creator_index');
 Route::post('/creator/signup', 'signupController@creator_signup');
 Route::get('/collector/signup', 'signupController@collector_index');
+Route::get('/terms', 'termsController@commonView');
+Route::get('/announcements', 'announcementController@commonView');
 Route::post('/collector/signup', 'signupController@collector_signup');
 
 Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['admin']], function () {
         //write admin routes here
-        Route::get('/admin/home', 'adminHome@index')->middleware('session');
+        Route::get('/admin/home', 'adminHome@index');
 
         Route::get('/admin/editProfile/{id}', 'adminController@edit');
         Route::post('/admin/editProfile/{id}', 'adminController@update');
@@ -38,13 +38,20 @@ Route::group(['middleware' => ['session']], function () {
         Route::get('/admin/terms', 'TermsController@view');
         Route::post('/admin/terms', 'TermsController@update');
 
-        Route::get('/admin/announcement', 'announcementController@view');
+        Route::get('/admin/artType', 'artTypeController@index');
+        Route::post('/admin/artType', 'artTypeController@insert');
+        Route::get('/admin/artType/delete/{id}', 'artTypeController@delete');
+
+        Route::get('/admin/announcement', 'announcementController@index');
         Route::post('/admin/announcement', 'announcementController@insert');
-        Route::post('/admin/announcement/edit{id}', 'announcementController@edit');
-        Route::post('/admin/announcement/delete{id}', 'announcementController@delete');
+        Route::post('/admin/announcement/edit/{id}', 'announcementController@edit');
+        Route::get('/admin/announcement/delete/{id}', 'announcementController@delete');
 
         Route::get('/admin/viewCreator', 'adminController@viewCreators');
+        Route::get('/admin/viewCreator/delete/{id}', 'adminController@deleteCreator');
+
         Route::get('/admin/viewCollector', 'adminController@viewCollectors');
+        Route::get('/admin/viewCollector/delete/{id}', 'adminController@deleteCollector');
 
 
 

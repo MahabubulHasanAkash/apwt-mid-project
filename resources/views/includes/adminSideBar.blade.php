@@ -3,17 +3,18 @@
       
     <div class="w3-white w3-text-grey w3-card-4">
       <div class="w3-display-container"><br>
-        <p class="w3-center"><img src="https://images.clipartlogo.com/files/istock/previews/9339/93397305-vector-user-icon-of-man-in-business-suit.jpg" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
+        <p class="w3-center"><img src="{{asset('upload/'.session('profileImage'))}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p>
         <div class="w3-display-bottomcenter w3-container w3-text-black">
           <h3 style="text-align: center;">Welcome </h3>
           
-          {{-- <h4 style="text-align: center">{{$name}} </h4><br> --}}
+          <h4 style="text-align: center">{{session('name')}} </h4><br>
         </div>
       </div>
       <div class="w3-container">
         <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Admin</p>
         
-        {{-- <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{$useremail}}</p> --}}
+        <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{session('useremail')}}</p>
+        <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{session('phone')}}</p>
         
         <hr>
 

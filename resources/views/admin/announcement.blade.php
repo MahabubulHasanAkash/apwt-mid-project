@@ -83,6 +83,7 @@ tr:nth-child(even) {
         
                
         <form method="post">
+          @csrf
             <table>
                 <tr>
                     <td><b>Title</b></td>
@@ -107,6 +108,7 @@ tr:nth-child(even) {
           <div class="w3-container w3-padding "><br>
            
             <h6 class="w3-opacity">Announcements</h6>
+            
             <table>
               <tr>
                 <th>Title</th>
@@ -121,25 +123,19 @@ tr:nth-child(even) {
             <td>{{$announcements['title']}}</td>
 			      <td>{{$announcements['details']}}</td>
             
+            
             <td>   
-                <a href="/announcement/edit/{id}{{$announcements['id']}}"> Edit</a> |
-                <a href="/announcement/delete/{id}{{$announcements['id']}}"> Delete</a>
+                <a href="/admin/announcement/edit/{{$announcements['id']}}"> Edit</a> |
+                <a href="/admin/announcement/delete/{{$announcements['id']}}"> Delete</a>
+                
+                
             </td>
 		        </tr>
             
             
             
             @endforeach
-              {{-- <tr>
-                
-                <td>About Tonight</td>
-                <td>There will be a serprise tonight. Please be available at 9 pm.</td>
-                
-                <td><a href="admin/announcement/{announcement}/edit">Edit</a></td>
-                <td><a href="admin/announcement/{announcement}">Delete</a></td>
-
-              </tr> --}}
-              
+                            
             </table><br><br>
             <br><br><br><br>
           </div>

@@ -123,8 +123,8 @@ tr:nth-child(even) {
           
           
           <div class="w3-container w3-padding "><br><br><br>
-            {{$id}}
-            <h6 class="w3-opacity">Recent {{$id}}Activity</h6>
+            
+            <h6 class="w3-opacity">Recent Activity</h6>
             <table>
               <tr>
                 <th>Date</th>

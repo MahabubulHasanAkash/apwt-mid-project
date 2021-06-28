@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class ArtType extends Model
 {
-  
-    protected $table = 'user';
+    use HasFactory;
+    protected $table = 'artType';
     public $timestamps = false;
 }

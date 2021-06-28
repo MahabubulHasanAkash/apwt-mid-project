@@ -19,6 +19,7 @@
     width: 300px;
     margin-left: -200px /* half of you width */
   }
+  
 
   table {
   font-family: arial, sans-serif;
@@ -56,7 +57,7 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-    @include('includes.adminNav');
+  @include('includes.adminNav');
     
 <body class="w3-light-grey">
 
@@ -70,48 +71,73 @@ tr:nth-child(even) {
       @include('includes.adminSideBar');
   
       <!-- Right Column -->
-      <div class="w3-twothird">
+      <div class="w3-twothird">        
         <div class="w3-container w3-card w3-white"><br>  
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
           <div class="w3-searchbar" style="float:right">
             <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-        </div><br><br><br>          
-                        
+        </div><br><br><br>   
           
-        <p class="fa fa-users w3-large"> View Collectors</p> <br> <br>
+        <p class="fa fa-edit w3-large"> Art Type</p> <br> <br>  
+        <form method="post">
+            @csrf
+            <h6 class="w3-opacity">Add Art Types</h6>
+              <table>
+                  <tr>
+                      <td><b>Art Type Name</b></td>
+                      <td><input type="text" class="form-control" name="t_name" value=""></td>
+                      
+                  </tr>
+                  
+              </table><br><input style="float: right;" type="Submit" name="submit"><br>
+            
+              </form><br>
           
-          <div class="w3-container w3-padding "><br>
-            <h6 class="w3-opacity">Collectors</h6>
-            <table>
+        
+  
+                   
+            <div class="w3-container w3-padding "><br>
+             
+              <h6 class="w3-opacity">Art Types</h6>
+              
+              <table>
+                <tr>
+                  <th>Art Type</th>
+                  <th>Action</th>
+  
+                </tr> 
+                @foreach ($artTypeList as $artTypes) 
+  
               <tr>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Action</th>
                 
-              </tr>
-              @foreach ($adminList as $admins) 
-
+              <td>{{$artTypes['t_name']}}</td>
               
-            <tr>
               
-            <td>{{$admins['name']}}</td>
-			      <td>{{$admins['email']}}</td>
-            
-            <td>   
+              <td>   
+                  <a href="/admin/artType/edit/{{$artTypes['t_id']}}"> Edit</a> |
+                  <a href="/admin/artType/delete/{{$artTypes['t_id']}}"> Delete</a>
+                  
+                  
+              </td>
+                  </tr>
+              
+              
+              
+              @endforeach
+                              
+              </table><br><br>
+              <br><br><br><br>
+            </div>
+      </div><br><br>
                 
-                <a href="/admin/viewCollector/delete/{{$admins['id']}}"> Delete</a>
-            </td>
-		        </tr>
+    </div>
+          
             
-            
-            
-            @endforeach
-            </table><br><br>
-            <br><br><br><br>
-          </div>
+          </div><br>
+  </div>
+          
         </div>
-      </div><br>
   
       <!-- End Right Column -->
       </div>

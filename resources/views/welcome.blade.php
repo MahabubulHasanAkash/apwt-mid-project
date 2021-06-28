@@ -33,6 +33,7 @@
           <p>Choose between auctions, fixed-price listings, and declining-price listings. You choose how you want to sell your NFTs, and we help you sell them!</p>
           </div>
         </div>
+        
     </div>
                                   
         

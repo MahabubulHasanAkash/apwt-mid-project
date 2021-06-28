@@ -79,7 +79,7 @@ tr:nth-child(even) {
             <button type="submit"><i class="fa fa-search"></i></button><br>
         </div><br><br><br>       
         <p class="fa fa-edit w3-large"> Edit Profile</p> <br> <br>  
-        <form>
+        <form  method="post" action="/admin/editProfile/{{session('id')}}" enctype="multipart/form-data">
           @csrf
         <table>
           <tr>
@@ -88,15 +88,19 @@ tr:nth-child(even) {
           </tr>
           <tr>
             <td>Email</td>
-            <td><input type="text" name="email" value="{{$useremail}}"></td>
+            <td><input type="text" name="email" value="{{$email}}"></td>
           </tr>          
           <tr>
             <td>Password</td>
             <td><input type="Password" name="password" value="{{$password}}"></td>
           </tr>
           <tr>
+            <td>Phone</td>
+            <td><input type="text" name="phone" value="{{$phone}}"></td>
+          </tr>
+          <tr>
             <td>Picture</td>
-            <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+            <td><input type="file" name="image" value="{{$profileImage}}" id="image"></td>
           </tr>
           <tr>
             <td></td>

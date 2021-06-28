@@ -97,8 +97,8 @@
 			      <td>{{$admins['email']}}</td>
             
             <td>   
-                <a href="/user/edit/{{$admins['id']}}"> Edit</a> |
-                <a href="/user/delete/{{$admins['id']}}"> Delete</a>
+                
+                <a href="/admin/viewCreator/delete/{{$admins['id']}}"> Delete</a>
             </td>
 		        </tr>
             
