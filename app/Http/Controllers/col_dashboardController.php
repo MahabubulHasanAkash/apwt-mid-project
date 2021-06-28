@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 class col_dashboardController extends Controller
 {
     public function index(){
-        return view('Collector.dashboard');
+
+        $msz = '';
+        return view('Collector.dashboard')->with('msg', $msz);
     }
 }

@@ -33,7 +33,7 @@
 
         <div class="col-md-4">
           <div class="thumbnail">
-            <a href="/details">  
+            <a href="/collectionProof/{{$item->id}}">  
             <img src="images/{{$item->image}}" alt="Nature" style="width:100%">
               <div class="caption">
                 <p>{{$item->name}} || {{$item->value}} ETH </p>

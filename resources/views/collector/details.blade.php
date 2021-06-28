@@ -41,7 +41,7 @@
                           <br>
                           Edition : {{$item->edition}}
                           <br>
-                          <a href="/proof" class=""><h4>See proof of authenticity</h4></a>
+                          <a href="/proof/{{$item->id}}" class=""><h4>See proof of authenticity</h4></a>
                     </p>
                       <div class="product_meta">
                         <p id="txt">
@@ -61,7 +61,6 @@
                           </div>
                           <p>
                               <button class="btn btn-round btn-danger" value="purchase" ></i> Submit</button>
-                              <input type="button" value="Submit">
                           </p>
                         </form>
                   </div>

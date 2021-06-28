@@ -58,18 +58,16 @@ Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
 
 Route::get('/collector/home', 'col_homeController@getItems');
 Route::get('/collector/dashboard', 'col_dashboardController@index');
-Route::get('/myCollection', 'CollectionController@getCollection');
+Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
 Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
 
 Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
 Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
 
+Route::get('/wallet', 'walletController@index');
 
 
 
-Route::get('/proof', function () {
-    return view('Collector.proof');
-});
-Route::get('/wallet', function () {
-    return view('Collector.wallet');
-});
+
+Route::get('/proof/{id}', 'authenticityController@authenticate');
+Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');
