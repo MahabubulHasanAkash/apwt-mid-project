@@ -10,9 +10,13 @@ use Illuminate\Support\Facades\Hash;
 
 class auth extends Controller
 {
+
     public function index()
     {
-        return view('auth.login');
+        if (session('userid') != null)
+            return redirect("/creator/home");
+        else
+            return view('auth.login');
     }
 
     public function verifylogin(LoginRequest $req)
@@ -27,6 +31,7 @@ class auth extends Controller
                 ->first();
             if (password_verify($req->password, $user->password)) {
                 $usertype =  $user->usertype;
+                $req->session()->put('userid', $user->id);
                 $req->session()->put('useremail', $req->email);
                 $req->session()->put('usertype', $usertype);
                 return redirect('/' . $usertype . '/home');

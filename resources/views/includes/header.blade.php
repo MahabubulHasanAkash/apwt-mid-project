@@ -5,8 +5,8 @@
     <h3>Create | Collect | Sell</h3>  
     <h4> NFT-Digital Art Marketplace</h4>    
     <div class="w3-padding-32">
-        <a href="creator/collector" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Explore</a>
-        <a href="/collector" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Create</a>
+        <a href="explore" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Explore</a>
+        <a href="/creator/signup" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Create</a>
         <a href="/login" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Login</a>
         <a href="/collector/signup" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Signup</a>
     </div>

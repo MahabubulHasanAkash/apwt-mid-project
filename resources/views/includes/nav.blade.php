@@ -1,32 +1,27 @@
-<div class="w3-bar w3-theme">
-<<<<<<< HEAD
-      <a href="#" class="w3-bar-item w3-button w3-padding-16">nft_place</a>
-      <a href="/creation" class="w3-bar-item w3-button w3-padding-16">Creation</a>
-      <a href="/collection" class="w3-bar-item w3-button w3-padding-16">Collection</a>
-      <div class="w3-dropdown-hover">
-        <button class="w3-button w3-padding-16">
-          Manage <i class="fa fa-caret-down"></i>
-        </button>
-=======
-      <a href="/creator/home" class="w3-bar-item w3-button w3-padding-16">Marketplace</a>
-      <a href="/creator/creation" class="w3-bar-item w3-button w3-padding-16">Creation</a>
-      <a href="/creator/collection" class="w3-bar-item w3-button w3-padding-16">Collection</a>
-      <div class="w3-dropdown-hover">
-        <a href="/creator/profile" class="w3-button w3-padding-16">
-          Profile <i class="fa fa-caret-down"></i>
-        </a>
->>>>>>> a87a35811ffde37a0a66f940dbc6f3a8c47e9af8
-        <div class="w3-dropdown-content w3-card-4 w3-bar-block">
-          <a href="/creator/settings" class="w3-bar-item w3-button">Settings</a>
-          <a href="/creator/transactions" class="w3-bar-item w3-button">Transactions</a>
-          <a href="/creator/payment" class="w3-bar-item w3-button">Payment</a>
-          <a href="/creator/bids" class="w3-bar-item w3-button">Bid</a>
-          <a href="/logout" class="w3-bar-item w3-button">Logout</a>
-        </div>
-      </div>
-      <a href="/dashboard" class="w3-bar-item w3-button w3-padding-16">Dashboard</a>
-    <div class="w3-searchbar" style="float:right">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
+<div class="w3-bar w3-theme ">
+  <div class="w3-dropdown-hover"  style="float:right;margin-right:1.5%;">
+    <a  href="/creator/profile/{{session('userid')}}" class="w3-button w3-padding-16">
+      Profile <i class="fa fa-caret-down"></i>
+    </a>
+    <div class="w3-dropdown-content w3-card-4 w3-bar-block">
+      <a href="/creator/profile/settings/{{session('userid')}}" class="w3-bar-item w3-button">Settings</a>
+      <a href="/wallet/{{session('userid')}}" class="w3-bar-item w3-button">Wallet</a>
+      <a href="/creator/account/{{session('userid')}}" class="w3-bar-item w3-button">Account</a>
+      <a href="/logout" class="w3-bar-item w3-button">Logout</a>
     </div>
-    </div>
+  </div>
+  <a href="/creator/home" class="w3-bar-item w3-button w3-padding-16 ">Marketplace</a>
+  <a href="/auction" class="w3-bar-item w3-button w3-padding-16 ">Auction</a>
+  <a href="/store" class="w3-bar-item w3-button w3-padding-16 ">Store</a>
+  <div class="w3-searchbar  w3-bar-item w3-button w3-padding-16" style="float:right">
+    <form class="w3-container" action="/creator/search" method="post">
+    @csrf
+    <input type="text" placeholder="Search Art " name="search">
+    <button type="submit"><i class="fa fa-search"></i></button><br>
+    </form>
+  </div>
+  <a href="/creations/{{session('userid')}}" class="w3-bar-item w3-button w3-padding-16"style="float:right;margin-right:1.5%;">Creation</a>
+  <a href="/collections/{{session('userid')}}" class="w3-bar-item w3-button w3-padding-16"style="float:right;margin-right:1.5%;">Collection</a>
+  
+  
+</div>

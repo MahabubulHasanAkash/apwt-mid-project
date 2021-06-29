@@ -71,15 +71,24 @@
                         <button  class="btn btn-block" value="Signup" style="background:black; color: white; font-weight:bold">Signup </button>
                     </div>
                 </div>
+
+                @if (isset($errors))
+                @foreach ($errors->all() as $error)
+                <div class="alert alert-danger" role="alert">
+                    {{$error}} <br>
+                </div>
+                @endforeach
+                @endif
+                @if (session('msg') != null)
+                <div class="alert alert-info" role="alert">
+                    {{session('msg')}}
+                </div>
+                @endif
             </form>
 
         </div>
     </div>
-    @if (isset($errors))
-    @foreach ($errors->all() as $error)
-       {{$error}} <br>
-    @endforeach
-    @endif
+
 
 </body>
 

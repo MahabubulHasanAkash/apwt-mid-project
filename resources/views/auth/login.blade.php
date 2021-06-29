@@ -38,10 +38,16 @@
                         </div>
                         @if (isset($errors))
                         @foreach ($errors->all() as $error)
-                           {{$error}} <br>
+                        <div class="alert alert-danger" role="alert">
+                            {{$error}} <br>
+                        </div>
                         @endforeach
                         @endif
-
+                        @if (session('msg') != null)
+                        <div class="alert alert-info" role="alert">
+                            {{session('msg')}}
+                        </div>
+                        @endif
                     </form>
                 </div>
             </div>
@@ -49,10 +55,10 @@
     </div>
 
 
-
-    <h3 style="color: red">
-        {{session('msg')}}
-    </h3>
+    
+   
+      
+  
 </body>
 
 </html>
