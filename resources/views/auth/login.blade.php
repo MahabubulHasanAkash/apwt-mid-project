@@ -18,7 +18,7 @@
                 Protect and Sell your Unique Digital Creations
             </label>
         </div>
-                <div class="card-body" style="padding: 40px;margin-left: 400px; ">
+                <div class=" card-body" style="padding: 40px;margin-left: 400px; ">
                     <form action="/login" method="post">
                         @csrf
                         <div class="form-group row">
@@ -41,6 +41,9 @@
                            {{$error}} <br>
                         @endforeach
                         @endif
+                        <h3 style="color: red">
+                            {{session('msg')}}
+                        </h3>
 
                     </form>
                 </div>
@@ -50,9 +53,7 @@
 
 
 
-    <h3 style="color: red">
-        {{session('msg')}}
-    </h3>
+    
 </body>
 
 </html>

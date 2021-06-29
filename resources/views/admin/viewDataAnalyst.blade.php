@@ -73,12 +73,11 @@
       <div class="w3-twothird">
         <div class="w3-container w3-card w3-white"><br>  
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
-          <form class="w3-container" action="/admin/searchCreator" method="post" style="float:right">
-            @csrf
-            <input type="text" placeholder="Search Creator " name="search">
+          <div class="w3-searchbar" style="float:right">
+            <input type="text" placeholder="Search.." name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-            </form><br><br><br>         
-        <p class="fa fa-users w3-large"> View Creators</p> <br> <br>           
+        </div><br><br><br>         
+        <p class="fa fa-users w3-large"> View Data Analysts</p> <br> <br>           
           <div class="w3-container w3-padding "><br>
             <h6 class="w3-opacity">Creators</h6>
             <table>
@@ -89,17 +88,17 @@
                 
               </tr>
 
-              @foreach ($creators as $admins) 
+              @foreach ($dataAnalystList as $dataAnalysts) 
 
               
             <tr>
               
-            <td>{{$admins->name}}</td>
-			      <td>{{$admins->email}}</td>
+            <td>{{$dataAnalysts['name']}}</td>
+			      <td>{{$dataAnalysts['email']}}</td>
             
             <td>   
                 
-                <a href="/admin/viewCreator/delete/{{$admins->id}}"> Delete</a>
+                <a href="/admin/viewDataAnalyst/delete/{{$dataAnalysts['id']}}"> Delete</a>
             </td>
 		        </tr>
             

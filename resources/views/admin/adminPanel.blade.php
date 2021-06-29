@@ -73,10 +73,11 @@ tr:nth-child(even) {
       <div class="w3-twothird">
         <div class="w3-container w3-card w3-white"><br> 
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a> 
-          <div class="w3-searchbar" style="float:right">
-            <input type="text" placeholder="Search.." name="search">
+          <form class="w3-container" action="/admin/searchAdmin" method="post" style="float:right">
+            @csrf
+            <input type="text" placeholder="Search Admin " name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-        </div><br><br><br>          
+            </form><br><br><br>          
                         
         <p class="fa fa-users w3-large"> Admin Panel</p> <br> <br>
          
@@ -96,8 +97,8 @@ tr:nth-child(even) {
               
             <tr>
               
-            <td>{{$admins['name']}}</td>
-			      <td>{{$admins['email']}}</td>
+            <td>{{$admins->name}}</td>
+			      <td>{{$admins->email}}</td>
             
             
 		        </tr>

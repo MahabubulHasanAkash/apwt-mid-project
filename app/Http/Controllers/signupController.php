@@ -46,4 +46,17 @@ class signupController extends Controller
         $req->session()->flash('msg', 'Signup Successfull');
         return redirect('/login');
     }
+    public function dataAnalyst_signup(SignupRequest $req)
+    {
+        DB::table('user')->insert(
+            array(
+                'name' => $req->name,
+                'email' => $req->email,
+                'password' => Hash::make($req->password),
+                'usertype' => 'dataAnalyst',
+            )
+        );
+        $req->session()->flash('msg', 'Signup Successfull');
+        return redirect('/admin/addDataAnalyst');
+    }
 }

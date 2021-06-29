@@ -9,7 +9,7 @@
         <a href="/collector" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Create</a>
         <a href="/announcements" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Announcement</a>
         <a href="/login" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Login</a>
-        <a href="/registration" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Signup</a>
+        <a href="/creator/signup" target="" class="w3-btn w3-xsmall w3-dark-grey w3-hover-light-grey"  style="font-weight:900;">Signup</a>
     </div>
     
   </header>

@@ -79,64 +79,50 @@ tr:nth-child(even) {
             <button type="submit"><i class="fa fa-search"></i></button><br>
         </div><br><br><br>
 
-        <p class="fa fa-bullhorn w3-large"> Announcement</p> <br> <br>   
-        
-               
-        <form method="post">
-          @csrf
-            <table>
-                <tr>
-                    <td><b>Title</b></td>
-                    <td><input type="text" class="form-control" name="title" value=""></td>
-                    
-                </tr>
-                <tr>
-                    <td><b>Details</b></td>
-                    {{-- <td><input type="text" name="announcement"></td> --}}
-                
-                    <td><textarea type="text" name="details" class="form-control" value="" rows="6" cols="100"></textarea></td>
-                    
-                </tr>
-                
-            </table><br><input style="float: right;" type="Submit" name="submit"><br>
-          
-            </form><br>
-        
+        <p class="fa fa-edit w3-large"> Add Data Analyst</p> <br> <br> 
+        <h3 style="color: green">
+          {{session('msg')}}
+      </h3><br>
+      <h4 style="color: red">
+      @if (isset($errors))
+          @foreach ($errors->all() as $error)
+              {{$error}} <br>
+           @endforeach
+      @endif
+      </h4>
       
 
-                 
-          <div class="w3-container w3-padding "><br>
-           
-            <h6 class="w3-opacity">Announcements</h6>
+        <form action="/admin/addDataAnalyst" method="post" >
+            @csrf
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <input autocomplete="off" class="form-control" id="name" name="name" placeholder="Name" type="text" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <input autocomplete="off" class="form-control" id="email" name="email" placeholder="Email address" type="email" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <input autocomplete="off" class="form-control" id="password" name="password" placeholder="Password" type="password" value="">
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <input autocomplete="off" class="form-control" id="password_confirmation'" name="password_confirmation'" placeholder="Confirm password" type="password" value="">
+                </div>
+            </div>
             
-            <table>
-              <tr>
-                <th>Title</th>
-                <th>Details</th>    
-                <th>Action</th>
-                
-              </tr> 
-              @foreach ($announcementList as $announcements) 
-
-            <tr>
-              
-            <td>{{$announcements['title']}}</td>
-			      <td>{{$announcements['details']}}</td>
-            
-            
-            <td>   
-                
-                <a href="/admin/announcement/delete/{{$announcements['id']}}"> Delete</a>
-                
-                
-            </td>
-		        </tr>
-            
-            
-            
-            @endforeach
-                            
-            </table><br><br>
+            <div class="form-group row">
+                <div class="col-md-8 offset-md-2">
+                    <button  class="btn btn-block" value="Signup" style="background:black; color: white; font-weight:bold">Signup </button>
+                </div>
+            </div>
+        </form>
+               
+        <br><br>
             <br><br><br><br>
           </div>
         </div>

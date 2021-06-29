@@ -38,7 +38,7 @@
                 <a href="/creator/signup" style="font-size:medium; color:rgb(57, 94, 98);">Signup as creator?</a>
             </div>
           
-            <form action="/creator/signup" method="post">
+            <form action="/collector/signup" method="post">
                 @csrf
                 <div class="form-group row">
                     <div class="col-md-8 offset-md-2">

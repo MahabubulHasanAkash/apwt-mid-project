@@ -84,7 +84,7 @@ tr:nth-child(even) {
           </form><br><br><br>
                         
           
-        <p class="fa fa-users w3-large"> View Collectors</p> <br> <br>
+        <p class="fa fa-users w3-large"> Search Collectors</p> <br> <br>
           
           <div class="w3-container w3-padding "><br>
             <h6 class="w3-opacity">Collectors</h6>
@@ -95,19 +95,22 @@ tr:nth-child(even) {
                 <th>Action</th>
                 
               </tr>
-              
-              @foreach ($collectors as $admins) 
+              @foreach ($collectors as $collector) 
+
             <tr>
-                  <td>{{$admins->name}}</td>
-                  <td>{{$admins->email}}</td>
-                  <td>   
-                    <a href="/admin/viewCreator/delete/{{$admins->id}}"> Delete</a>
-                </td>
-              @endforeach
+              
+            <td>{{$collector->name}}</td>
+			      <td>{{$collector->email}}</td>
             
-          </tr>
+            <td>   
+                
+                <a href="/admin/searchCollector/delete/{{$collector->id}}"> Delete</a>
+            </td>
+		        </tr>
             
-         
+            
+            
+            @endforeach
             </table><br><br>
             <br><br><br><br>
           </div>

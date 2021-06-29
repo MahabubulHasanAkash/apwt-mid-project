@@ -32,7 +32,7 @@
                 <label style="font-size: xx-large;">Terms & Condition</label>
             </div>
             <div class="row justify-content-md-center mb-5">
-                <label style="font-size:medium;">Collect and sell your unique digital creations.</label> 
+                
             </div>
             <p>@foreach ($termList as $terms) 
           

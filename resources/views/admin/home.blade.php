@@ -74,10 +74,11 @@ tr:nth-child(even) {
       <div class="w3-twothird">
         <div class="w3-container w3-card w3-white"><br>
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
-          <div class="w3-searchbar" style="float:right">
-            <input type="text" placeholder="Search.." name="search">
+          <form class="w3-container" action="/admin/searchActivity" method="post" style="float:right">
+            @csrf
+            <input type="text" placeholder="Search Activity " name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-        </div><br><br><br>
+            </form><br><br><br>
         <p class="fa fa-dashboard w3-large"> Dash Board</p> <br> <br> 
           <div class="w3-quarter">
             <div class="w3-container w3-blue w3-padding-16">
@@ -127,37 +128,31 @@ tr:nth-child(even) {
             <h6 class="w3-opacity">Recent Activity</h6>
             <table>
               <tr>
-                <th>Date</th>
-                <th>Collector</th>
-                <th>Creator</th>
-                <th>Category</th>
-                <th>Amount</th>
+                <th>Creator ID</th>
+                <th>Owner ID</th>
+                <th>Item Name</th>
+                <th>Creation Date</th>
+                <th>Value</th>
+                
+                
               </tr>
-              <tr>
-                <td>06-06-2021</td>
-                <td>Anik</td>
-                <td>Akash</td>
-                <td>Music</td>
-                <td>2000</td>
-
-              </tr>
-              <tr>
-                <td>04-06-2021</td>
-                <td>Afridi</td>
-                <td>Choyon</td>
-                <td>Picture</td>
-                <td>4000</td>
-
-              </tr>
-              <tr>
-                <td>02-06-2021</td>
-                <td>Faisal</td>
-                <td>Nafi</td>
-                <td>Video</td>
-                <td>6000</td>
-
-              </tr>
-            </table>
+              
+              @foreach ($activityList as $activities) 
+            <tr>
+                  <td>{{$activities->creator_id}}</td>
+                  <td>{{$activities->owner_id}}</td>
+                  <td>{{$activities->name}}</td>
+                  <td>{{$activities->creation_date}}</td>
+                  <td>{{$activities->value}}</td>
+                  {{-- <td><p class="w3-center"><img src="{{asset('upload/'.session('image'))}}" class="w3-circle" style="height:106px;width:106px" alt="Avatar"></p></td> --}}
+                  
+                  
+              @endforeach
+            
+          </tr>
+            
+         
+            </table><br><br>
           </div><br>
         </div>
     </div>

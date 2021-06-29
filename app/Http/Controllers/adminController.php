@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\NFT;
+
 
 
 use Illuminate\Support\Facades\DB;
@@ -99,6 +101,13 @@ class adminController extends Controller
             }
         return back();
         }
+        else
+        {
+            DB::table('user')
+                ->where('id', $id)
+                ->update(['name' => $req->name, 'password' => $req->password, 'email' => $req->email, 'phone' => $req->phone ]);
+                return redirect('/admin/home');
+        }
 
 
        
@@ -136,7 +145,7 @@ class adminController extends Controller
 
     public function adminPanel()
     {
-        
+
 
             return redirect()->route('user.viewAllUser');
             $a_id = $req->session()->get('id');
@@ -149,20 +158,49 @@ class adminController extends Controller
         ->with('name',$a_name)
         ->with('password',$a_password)
         ->with('useremail',$a_email);
-
         
+    }
+
+    public function searchAdmin(Request $req)
+    {
+        
+        // DB::table('announcement')          
+        // ->insert(['title' => $req->title, 'details' => $req->details ]);
+        
+        //return redirect()->route('admin.announcement');
+        $admins = DB::table('user')
+            ->where('name', 'like', $req->search . '%')
+            ->where('usertype','admin')
+            ->get();
+        return view('admin.adminPanel')->with("adminList", $admins);
+  
+
     }
 
     public function viewCreators()
     {
         
         //$admins = User::all();
-        $admins = User::where('usertype', 'creator')->get();
+        $creators = User::where('usertype', 'creator')->get();
         //$admins = DB::table('user')->where('usertype', 'creator')->get();
         //$admins = DB::select("select * from user where usertype = creator");
         
-        return view ('admin.viewCreator')->with('adminList',$admins);
+        return view ('admin.viewCreator')->with('creators',$creators);
     }
+
+    public function searchCreator(Request $req)
+    {
+        
+        
+        $creators = DB::table('user')
+            ->where('name', 'like', $req->search . '%')
+            ->where('usertype','creator')
+            ->get();
+        return view('admin.viewCreator')->with("creators", $creators);
+  
+
+    }
+
     public function deleteCreator(Request $req, $id)
     {
         
@@ -178,20 +216,34 @@ class adminController extends Controller
     
 
     }
+
     public function viewCollectors()
     {
-        $admins = User::where('usertype', 'collector')->get();
+        $collectors = User::where('usertype', 'collector')->get();
         
-        return view ('admin.viewCollector')->with('adminList',$admins);
+        return view ('admin.viewCollector')->with('collectors',$collectors);
     }
 
-    public function deleteCollector(Request $req, $id)
+    public function searchCollector(Request $req)
     {
         
         // DB::table('announcement')          
         // ->insert(['title' => $req->title, 'details' => $req->details ]);
         
         //return redirect()->route('admin.announcement');
+        $collectors = DB::table('user')
+            ->where('name', 'like', $req->search . '%')
+            ->where('usertype','collector')
+            ->get();
+        return view('admin.viewCollector')->with("collectors", $collectors);
+  
+
+    }
+
+    public function deleteCollector(Request $req, $id)
+    {
+        
+        
         DB::table('user')
             ->where('id', $id)
             ->delete();
@@ -200,6 +252,25 @@ class adminController extends Controller
     
 
     }
+
+    public function viewNFT()
+    {
+        $nfts = NFT::all();
+        
+        return view ('admin.nft')->with('nftList',$nfts);
+    }
+
+    public function searchNFT(Request $req)
+    {
+        $nfts = DB::table('nft')
+            ->where('name', 'like', $req->search . '%')
+            ->get();
+        return view('admin.nft')->with("nftList", $nfts);
+    }
+
+    
+
+    
 
     
 }
