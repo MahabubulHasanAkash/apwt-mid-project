@@ -57,10 +57,12 @@ Route::group(['middleware' => ['session']], function () {
 
         Route::get('/creator/sell/{id}', 'storeController@onsell');
         Route::get('/creator/sell/{id}/edit', 'storeController@editsell');
+        Route::post('/creator/sell/{id}/edit', 'storeController@updatsell');
         Route::get('/creator/sell/{id}/delete', 'storeController@deletesell');
 
         Route::get('/creator/auction/{id}', 'auctionController@auction');
         Route::get('/creator/auction/{id}/edit', 'auctionController@editauction');
+        Route::post('/creator/auction/{id}/edit', 'auctionController@updateauction');
         Route::get('/creator/auction/{id}/delete', 'auctionController@deleteauction');
 
 

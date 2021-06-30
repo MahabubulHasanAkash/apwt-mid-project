@@ -12,7 +12,7 @@
     <div style="margin: 5%">
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2> Edit Auctions</h2>
-        <form class="w3-container" action="" method="post" enctype="multipart/form-data">
+        <form class="w3-container" action="/creator/auction/{{$creation->id}}/edit" method="post" enctype="multipart/form-data">
           @csrf
           <div>
             <label>Title</label>

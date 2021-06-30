@@ -73,23 +73,18 @@ class nftController extends Controller
     public function add(BidRequest $req, $id, $cid)
     {
 
-        static $bidcount = 0;
+        static $bidcount = 5;
         static $maxvalue = 0;
         $bid = $req->bid;
 
-
-
-        if ($bid < session('mxvalue') && $bidcount < 5) {
+        if ($bid > $maxvalue && $bidcount < 5) {
             $bidcount = $bidcount + 1;
-            $req->session()->put('bidcount', $bidcount);
+            $maxvalue = $bid;
+            $req->session()->put('bidcount', 6);
+            $req->session()->put('mxvalue', $maxvalue);
             return back();
         } else {
-            $req->session()->put('mxvalue', $maxvalue);
             $token =  Hash::make(time() . rand(0, 100000));
-
-
-
-
             $creation = DB::table('creation')
                 ->where('id', $cid)
                 ->get()
@@ -105,7 +100,7 @@ class nftController extends Controller
                     'creation_date' => date('Y-m-d H:i:s'),
                     'edition' => $creation->edition,
                     'token' => $token,
-                    'value' => $bid,
+                    'value' => $maxvalue,
                     'image' => $creation->image,
                     'type' => $creation->type,
                 )
@@ -134,6 +129,7 @@ class nftController extends Controller
                 DB::table('wallet')
                     ->where('id', $sellerWallet->id)
                     ->update(['balance' =>  $sellerWallet->balance]);
+                dd($buyerWallet, $sellerWallet);
             }
             DB::table('ledger')->insert(
                 array(
@@ -141,7 +137,7 @@ class nftController extends Controller
                     'senderKey' => $buyerWallet->accountKey,
                     'receverKey' => $sellerWallet->accountKey,
                     'block' => $token,
-                    'amount' => $bid,
+                    'amount' => $maxvalue,
                 )
             );
             DB::table('auction')

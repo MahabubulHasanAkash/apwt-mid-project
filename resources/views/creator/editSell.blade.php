@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @include('includes.head')
-    <title>Add Creations</title>
+    <title>Edit Sell</title>
 </head>
 <body>
     @include('includes.nav')
     <div style="margin: 5%">
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2> Sell Creation </h2>
-        <form class="w3-container" action="/creator/{{session('userid')}}/creation/add" method="post" enctype="multipart/form-data">
+        <h2> Edit Sell </h2>
+        <form class="w3-container" action="/creator/sell/{{$creation->id}}/edit" method="post" enctype="multipart/form-data">
           @csrf
           <div>
             <label>Title</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="name" required>
+            <input value="{{$creation->name}}" class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="name" required>
           </div>
           <div class="w3-section">
             <label>Upload Creation</label>
@@ -24,11 +24,11 @@
           </div>
           <div class="w3-section">
             <label>Description</label>
-            <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="desc"  >
+            <input  value="{{$creation->description}}"  class="w3-input w3-border w3-hover-border-black" style="width:100%;" name="desc"  >
           </div>
           <div>
           <label>Edition</label>
-          <input class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="edition"  >
+          <input  value="{{$creation->edition}}"class="w3-input w3-border w3-hover-border-black" style="width:100%;" type="text" name="edition"  required>
           </div>
           <div> 
           <label>Price</label>
