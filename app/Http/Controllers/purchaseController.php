@@ -40,7 +40,8 @@ class purchaseController extends Controller
                     'name' => $item->name,
                     'value' => $item->value,
                     'image' => $item->image,
-                    'token' => $item->token
+                    'token' => $item->token,
+                    'creator' => 'Mr Bean'
                     ]
             );
 
@@ -51,7 +52,7 @@ class purchaseController extends Controller
         $balance = ($bal->balance) - $offeredValue;
 
             DB::table('wallet')
-                ->where( 'id', $id)
+                ->where( 'id', '3')
                 ->update([
                         'balance' => $balance,
                         'last_token' => $item->token

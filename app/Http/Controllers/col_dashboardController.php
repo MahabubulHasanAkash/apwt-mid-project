@@ -8,7 +8,7 @@ class col_dashboardController extends Controller
 {
     public function index(){
 
-        $msz = '';
+        $msz = ' ';
         return view('Collector.dashboard')->with('msg', $msz);
     }
 }

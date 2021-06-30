@@ -34,7 +34,7 @@ class col_profileUpdateController extends Controller
                 ->where( 'email', $email)->first();
                 
         //return view()->Route('collectorProfile')->with('user', $user);
-        return view('Collector.dashboard')->with('user', $user);
+        return view('Collector.dashboard')->with('user', $user)->with('msg', '.');
     }
 
 }
