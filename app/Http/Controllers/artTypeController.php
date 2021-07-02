@@ -39,8 +39,11 @@ class artTypeController extends Controller
         return redirect('admin/artType');
     }
 
-    public function view()
+    public function searchArtType(Request $req)
     {
-        
+        $artTypes = DB::table('ArtType')
+            ->where('t_name', 'like', $req->search . '%')
+            ->get();
+        return view('admin.artType')->with("artTypeList", $artTypes);
     }
 }

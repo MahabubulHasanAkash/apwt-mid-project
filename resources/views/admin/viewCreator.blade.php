@@ -56,7 +56,7 @@
   </style>
 
 <body class="w3-theme-l5">
-    @include('includes.adminNav');
+    @include('includes.adminNav')
     
 <body class="w3-light-grey">
 
@@ -67,7 +67,7 @@
     <div class="w3-row-padding">
     
       <!-- Left Column -->
-      @include('includes.adminSideBar');
+      @include('includes.adminSideBar')
   
       <!-- Right Column -->
       <div class="w3-twothird">

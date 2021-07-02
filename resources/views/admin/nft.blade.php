@@ -11,9 +11,13 @@
     @include('includes.adminNav')<br>
     
     <div class="w3-content w3-margin-top" style="max-width:1400px;">
-    <div class="w3-container w3-card w3-white">
-        <div class="w3-container w3-card w3-white w3-margin-bottom">
-          <h3 style="display: inline-block">NFTs<h3>  
+    
+      <form class="w3-container" action="/NFTs/searchNFT" method="post" style="float:right">
+        @csrf
+        <input type="text" placeholder="Search NFT " name="search">
+        <button type="submit"><i class="fa fa-search"></i></button><br>
+        </form><br><br><br>
+          {{-- <h3 style="display: inline-block">NFTs<h3>  
             <form class="w3-container" action="/NFTs/searchNFT" method="post" style="float:right">
               @csrf
               <input type="text" placeholder="Search NFT " name="search">
@@ -38,12 +42,32 @@
                 @endforeach
               
             </tr>
-              </div>
-              
+              </div> --}}
+              <div>
+                <div class="cotainer-fluid" style="margin-left:5%">
+                    <div class="row">
+                        @foreach ($nftList as $nfts)
+                        <div class="col-md-4" style="height:300px;width:300px">
+                            <div class="thumbnail" style="margin-top: 2%">
+                                <a href="/nft/details/{{$nfts->id}}"> 
+                                    <img src="{{asset('upload/'.$nfts->image)}}" alt="Art" style="height:220px;width:300px">
+                                    <div class="caption">
+                                        Title:{{$nfts->name}}<br>
+                                        Type:{{$nfts->type}}<br>
+                                        Price:{{$nfts->value}}eth<br>
+                                    </div>
+                                </a>
+                            </div>
+                        </div> 
+                        @endforeach            
+                    </div>
+                    
+                
+            
               </div>
             </div>
    
-    </div>
+    </div><br><br>
     @include('includes.footer')
 </body>
 </html>     

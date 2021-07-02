@@ -56,7 +56,7 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-    @include('includes.adminNav')<br>
+    @include('includes.adminNav')
     
 
 

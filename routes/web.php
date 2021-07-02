@@ -60,6 +60,7 @@ Route::group(['middleware' => ['session']], function () {
 
         Route::get('/admin/artType', 'artTypeController@index');
         Route::post('/admin/artType', 'artTypeController@insert');
+        Route::post('/admin/searchActivity', 'artTypeController@searchArtType');
         Route::get('/admin/artType/delete/{id}', 'artTypeController@delete');
 
         Route::get('/admin/announcement', 'announcementController@index');

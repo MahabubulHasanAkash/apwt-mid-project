@@ -60,7 +60,7 @@ tr:nth-child(even) {
     
     
 <body class="w3-light-grey">
-@include('includes.adminNav');
+@include('includes.adminNav')
   <!-- Page Container -->
   <div class="w3-content w3-margin-top" style="max-width:1400px;">
   

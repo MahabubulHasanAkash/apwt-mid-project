@@ -57,7 +57,7 @@ tr:nth-child(even) {
 </style>
 
 <body class="w3-theme-l5">
-  @include('includes.adminNav');
+  @include('includes.adminNav')
     
 <body class="w3-light-grey">
 
@@ -68,16 +68,17 @@ tr:nth-child(even) {
     <div class="w3-row-padding">
     
       <!-- Left Column -->
-      @include('includes.adminSideBar');
+      @include('includes.adminSideBar')
   
       <!-- Right Column -->
       <div class="w3-twothird">        
         <div class="w3-container w3-card w3-white"><br>  
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
-          <div class="w3-searchbar" style="float:right">
-            <input type="text" placeholder="Search.." name="search">
+          <form class="w3-container" action="/admin/searchActivity" method="post" style="float:right">
+            @csrf
+            <input type="text" placeholder="Search Art Type " name="search">
             <button type="submit"><i class="fa fa-search"></i></button><br>
-        </div><br><br><br>   
+            </form><br><br><br>   
           
         <p class="fa fa-edit w3-large"> Art Type</p> <br> <br>  
         <form method="post">
@@ -111,12 +112,12 @@ tr:nth-child(even) {
   
               <tr>
                 
-              <td>{{$artTypes['t_name']}}</td>
+              <td>{{$artTypes->t_name}}</td>
               
               
               <td>   
-                  <a href="/admin/artType/edit/{{$artTypes['t_id']}}"> Edit</a> |
-                  <a href="/admin/artType/delete/{{$artTypes['t_id']}}"> Delete</a>
+                  <a href="/admin/artType/edit/{{$artTypes->t_id}}"> Edit</a> |
+                  <a href="/admin/artType/delete/{{$artTypes->t_id}}"> Delete</a>
                   
                   
               </td>
