@@ -33,13 +33,13 @@
                       <td> <a  href="/creation/{{$auction->creation_id}}"> View Creation </a></td>
                       <td> <a class="btn btn-primary" href="/creator/profile/{{$auction->creator_id}}"> View Creator </a></td>
                       <td>
-                        <input type="number" name="bid" placeholder="eth">
+                        <input  type="number" name="bid" placeholder="eth" >
                       </td>
                       <td>
-                      {{session('bidcount')}}
+                       <div id ='bidcount' "> </div>
                       </td>
                       <td>
-                      {{session('mxvalue')}}
+                        <div id ='mxvalue'></div>
                       </td>
                       <td><button type="submit" class="btn btn-primary">Bid</button></td>
                     </form>
@@ -65,4 +65,23 @@
   
     @include('includes.footer')
 </body>
+<script>
+  function validateBid() {
+  alert();
+  let flag = 0;
+  let x = document.getElementById('bidcount')
+  let y = document.getElementById('mxvalue')
+  if (x > 5) {
+    alert("Successfull");
+    return true;
+  }
+  else{
+    if(y>flag)
+    flag = y;
+    x++;
+    document.getElementById('bidcount').innerHTML = x;
+    document.getElementById('mxvalue').innerHTML = flag;
+  }
+}
+<script>
 </html>     

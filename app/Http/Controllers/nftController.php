@@ -100,7 +100,7 @@ class nftController extends Controller
                     'creation_date' => date('Y-m-d H:i:s'),
                     'edition' => $creation->edition,
                     'token' => $token,
-                    'value' => $maxvalue,
+                    'value' => $bid,
                     'image' => $creation->image,
                     'type' => $creation->type,
                 )
@@ -129,7 +129,6 @@ class nftController extends Controller
                 DB::table('wallet')
                     ->where('id', $sellerWallet->id)
                     ->update(['balance' =>  $sellerWallet->balance]);
-                dd($buyerWallet, $sellerWallet);
             }
             DB::table('ledger')->insert(
                 array(
@@ -137,7 +136,7 @@ class nftController extends Controller
                     'senderKey' => $buyerWallet->accountKey,
                     'receverKey' => $sellerWallet->accountKey,
                     'block' => $token,
-                    'amount' => $maxvalue,
+                    'amount' => $bid,
                 )
             );
             DB::table('auction')
