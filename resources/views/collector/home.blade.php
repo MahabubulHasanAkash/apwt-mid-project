@@ -8,7 +8,11 @@
     <title>Marketplace</title>
 </head>
 <body>
-    @include('includes.nav')
+
+    <style>
+        body{background-image: linear-gradient(to bottom, #407587, #427280, #456f79, #476b72, #4a686c, #4e7075, #51797d, #558186, #5998a1, #5cafbd, #5ec7db, #5fdffb);}
+    </style>
+    @include('includes.col_nav')
     <div class="container">
        <br>
         <div class="w3-right">
@@ -21,75 +25,28 @@
               </div>
             </div>
           </div>
-        <h3 style="display: inline-block">nftPlace<h3>  
+        <h3 style="display: inline-block">Featured<h3>  
         <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/details" {{--put link for next page--}} target="_blank"> 
 
-                <img src="https://cdn.pixabay.com/photo/2017/11/20/02/00/fantasy-2964231_960_720.jpg" alt="Lights" style="width:100%">
-                <div class="caption">
-                  <p>Title 1</p>
-                </div>
-              </a>
+          @foreach ($item as $items)
+
+            <div class="col-md-3">
+              <div class="thumbnail">
+                <a href="/details/{{$items->id}}" {{--put link for next page--}} target="_blank"> 
+
+                  <img src="/images/{{$items->image}}" alt="Art{{$items->id}}" style="width:100%">
+                  <div class="caption">
+                    <p>{{$items->name}}</p>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/nature.jpg" target="_blank">
-                <img src="https://lh3.googleusercontent.com/_YyEJjXI8nsPSfQ-9SHgEdddB6P4nVRPp-g_5vNkDkiOLXX9d69VbtSMSLrqFxIpfEdUBFf9qSWpGFD3aEaYnCn_=w640-h400-e365-rj-sc0x00ffffff" alt="Nature" style="width:100%">
-                <div class="caption">
-                  <p>Title 2</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href=" target="_blank">
-                <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Fjords" style="width:100%">
-                <div class="caption">
-                  <p>Title 3</p>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/details" target="_blank">
-                <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Lights" style="width:100%">
-                <div class="caption">
-                  <p>Woman art</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/nature.jpg" target="_blank">
-                <img src="https://lh3.googleusercontent.com/_YyEJjXI8nsPSfQ-9SHgEdddB6P4nVRPp-g_5vNkDkiOLXX9d69VbtSMSLrqFxIpfEdUBFf9qSWpGFD3aEaYnCn_=w640-h400-e365-rj-sc0x00ffffff" alt="Nature" style="width:100%">
-                <div class="caption">
-                  <p>Title 5</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="thumbnail">
-              <a href=" target="_blank">
-                <img src="https://i2.wp.com/techarx.com/wp-content/uploads/2018/03/mikael-gustafsson-wallpaper-mikael-gustafsson.jpg?fit=1920%2C1080&ssl=1" alt="Fjords" style="width:100%">
-                <div class="caption">
-                  <p>Title 6</p>
-                </div>
-              </a>
-            </div>
-          </div>
+          
+          @endforeach
+          
+          
         </div>
       </div>
 </body>
-@include('includes.footer')
+@include('includes.footer1')
 </html>

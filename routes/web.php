@@ -16,6 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/profile', function () {
+    return view('creator.profile');
+});
 Route::get('/login', 'auth@index');
 Route::post('/login', 'auth@verifylogin');
 Route::get('/logout', 'auth@logout');
@@ -29,6 +34,8 @@ Route::post('/collector/signup', 'signupController@collector_signup');
 Route::group(['middleware' => ['session']], function () {
 
     Route::group(['middleware' => ['admin']], function () {
+
+
         //write admin routes here
 
 
@@ -91,3 +98,26 @@ Route::group(['middleware' => ['session']], function () {
         //write manager routes here
     });
 });
+
+
+//Collector route----->>>
+
+
+Route::get('/details/{id}', 'col_detailsController@getDetails');
+Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
+
+Route::get('/collector/home', 'col_homeController@getItems');
+Route::get('/collector/dashboard', 'col_dashboardController@index');
+Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
+Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
+
+Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
+Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
+
+Route::get('/wallet', 'walletController@index');
+
+
+
+
+Route::get('/proof/{id}', 'authenticityController@authenticate');
+Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');

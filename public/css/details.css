@@ -1,11 +1,18 @@
 body{margin-top:20px;
-    background:#eee;
+    background-image: linear-gradient(to bottom, #407587, #427280, #456f79, #476b72, #4a686c, #4e7075, #51797d, #558186, #5998a1, #5cafbd, #5ec7db, #5fdffb);
+
     }
     
     /*panel*/
     .panel {
         border: none;
         box-shadow: none;
+    }
+
+
+
+    .panel-body{
+        background-color: #7ef1e6;
     }
     
     .panel-heading {
@@ -74,7 +81,7 @@ body{margin-top:20px;
         height: 50px;
         border-radius: 50%;
         -webkit-border-radius: 50%;
-        color: #fff;
+        color: rgb(179, 33, 33);
         display: inline-block;
         text-align: center;
         border: 3px solid #fff;
@@ -84,7 +91,7 @@ body{margin-top:20px;
     }
     
     .adtocart i{
-        color: #fff;
+        color: rgb(201, 57, 57);
         font-size: 25px;
         line-height: 42px;
     }
@@ -156,3 +163,42 @@ body{margin-top:20px;
         font-size: 18px;
         font-weight: 300;
     }
+
+    #txt{
+        color: #2A3542;
+    }
+    .m-bot15{
+        color: #fc5959;
+        font-size: 15px;
+    }
+    .makeoffer{
+        color: midnightblue;
+    }
+
+    .button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      .tabs{
+          color: rgb(0, 0, 0);
+          font-size: 16px;
+      }
+
+      .commentor{
+          font-family: Arial;
+          color: rgb(19, 22, 22);
+          font-size: 20px;
+      }
+      .item-name{
+          font-family: Aclonica;
+          font-size: 15px;
+          font-weight: bold;
+      }

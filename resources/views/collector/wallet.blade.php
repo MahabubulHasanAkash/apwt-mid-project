@@ -31,7 +31,7 @@
                       <div class="admin-img">
                       <img src="/images/balance.png" class="image">
                         <div class="middle">
-                          <div class="text-bal"> BALANCE <b> 0.001 ETH </b> </div>
+                          <div class="text-bal"> BALANCE <b> {{$user->balance}} ETH </b> </div>
                         </div>
                       </div>      
                     </div>
@@ -40,7 +40,7 @@
                       <div class="admin-img">
                         <img src="../images/network.png" class="image">
                           <div class="middle">
-                            <div class="text-net"> myEtherwallet.com(ETH) <br> Last Block: #888747 </div>
+                            <div class="text-net"> {{$user->wallet_id}}<br>{{$user->network}} (ETH) <br> Last Block: {{$user->last_token}} </div>
                           </div>
                       </div>       
                     </div>

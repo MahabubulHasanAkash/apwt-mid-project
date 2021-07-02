@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="{{asset('css/dashboard.css')}}">
 </head>
 
@@ -11,11 +12,11 @@
   
 </div>
 <ul>
-  <li><a href="#logout">Logout</a></li>
+  <li><a href="/logout">Logout</a></li>
   <li><a href="#contact">Contact</a></li>
 
   <li>
-    <a href="/wallet">Wallet</a>
+    <a href="/collector/home">Marketplace</a>
   </li>
   <li><a href="##">Home</a></li>
 </ul>
@@ -43,7 +44,7 @@
         <div class="admin-img">
           <img src="../images/icon4.jpg" class="image">
           <div class="middle">
-            <div class="text"><a href="##">MARKETPLACE</a></div>
+            <div class="text"><a href="#history">HISTORY</a></div>
           </div>
         </div>
       </div>
@@ -52,11 +53,13 @@
         <div class="admin-img">
         <img src="../images/icon3.jpg" class="image">
           <div class="middle">
-            <div class="text"><a href="##">HISTORY</a></div>
+            <div class="text"><a href="/wallet">WALLET</a></div>
           </div>  
         </div>     
       </div>
     </section>
+
+    <h3>{{$msg}}</h3>
 
 </body>
 </html> 
