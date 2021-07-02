@@ -80,19 +80,24 @@ tr:nth-child(even) {
         <p class="fa fa-cog w3-large"> Terms & Conditins</p> <br> <br>            
                         
         <form method="post">
+          @csrf
           <table>
               
               <tr>
                   <td><b>Details</b></td>
                   {{-- <td><input type="text" name="announcement"></td> --}}
               
-                  <td><textarea rows="8" cols="100">These terms and conditions constitute a legally binding agreement (the “Agreement”) between you (also referred to herein as “You”, “Your” or “User”) and Bentley University ( “we” or “us”), governing your purchase of NFTs as part of the Bentley University NFT Collection Offering (the “Offering”). BY PARTICIPATING IN THIS OFFERING, YOU AGREE TO BE BOUND BY THESE TERMS AND ALL OF THE TERMS INCORPORATED HEREIN AND ALL OF THE TERMS OF SERVICE INCLUDED AS PART OF OZONE NETWORKS, INC D/B/A OPENSEA https://opensea.io/tos (the “OpenSea Terms of Service”). If you do not agree to the terms of this Agreement, as well as the OpenSea Terms of Service, you may not participate in the Offering.
-
-                    By entering into this Agreement, and/or by you participating in the Bentley University NFT Offering, you expressly acknowledge that you understand this Agreement and accept all of its terms. IF YOU DO NOT AGREE TO BE BOUND BY THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU MAY NOT PARTICIPATE IN THE OFFERING</textarea></td>
+                  <td><textarea rows="8" cols="100" name="terms">
+                    @foreach ($termList as $terms) 
+          
+                    {{$terms['terms']}}
+                  
+                    @endforeach</textarea></td>
                   
               </tr>
               
           </table><br>
+          
           <button class="w3-button w3-blue"style="float: right;"><i class="fa fa-edit w3-margin-right"></i>Update</button><br><br><br><br>
           {{-- <input style="float: right;" type="Submit" name="submit"><br> --}}
           </form><br><br>

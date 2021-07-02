@@ -35,6 +35,7 @@
             <p>Choose between auctions to sell your NFTs, and we help you sell them!</p>
           </div>
         </div>
+        
     </div>
                                   
         

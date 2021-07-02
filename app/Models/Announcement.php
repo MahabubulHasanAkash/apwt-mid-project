@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NFT extends Model
+class Announcement extends Model
 {
     use HasFactory;
-    protected $table = 'nft';
+    protected $table = 'announcement';
     public $timestamps = false;
 }

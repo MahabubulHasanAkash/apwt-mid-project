@@ -33,7 +33,11 @@ class auth extends Controller
                 $usertype =  $user->usertype;
                 $req->session()->put('userid', $user->id);
                 $req->session()->put('useremail', $req->email);
+                $req->session()->put('id', $user->id);
+                $req->session()->put('name', $user->name);
                 $req->session()->put('usertype', $usertype);
+                $req->session()->put('phone', $user->phone);
+                $req->session()->put('profileImage', $user->profileImage);
                 return redirect('/' . $usertype . '/home');
             } else {
                 $req->session()->flash('msg', 'Wrong Credentials');
