@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\SignupRequest;
+use App\Http\Requests\DataAnalystRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -46,7 +47,7 @@ class signupController extends Controller
         $req->session()->flash('msg', 'Signup Successfull');
         return redirect('/login');
     }
-    public function dataAnalyst_signup(SignupRequest $req)
+    public function dataAnalyst_signup(DataAnalystRequest $req)
     {
         DB::table('user')->insert(
             array(

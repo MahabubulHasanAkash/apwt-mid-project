@@ -75,8 +75,7 @@ tr:nth-child(even) {
         <div class="w3-container w3-card w3-white"><br>  
           <a href="{{ URL::previous() }}" class="fa fa-mail-reply"> Go Back</a>
             <div class="w3-searchbar" style="float:right">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button><br>
+            <br>
         </div><br><br><br>
 
         <p class="fa fa-edit w3-large"> Add Data Analyst</p> <br> <br> 
