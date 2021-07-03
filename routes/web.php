@@ -35,10 +35,6 @@ Route::get('/terms', 'termsController@commonView');
 Route::get('/announcements', 'announcementController@commonView');
 Route::post('/collector/signup', 'signupController@collector_signup');
 
-        //
-        
-
-        //kk
 
 
 Route::group(['middleware' => ['session']], function () {
@@ -81,25 +77,6 @@ Route::group(['middleware' => ['session']], function () {
         Route::get('/admin/viewCollector/delete/{id}', 'adminController@deleteCollector');
     });
     Route::group(['middleware' => ['collector']], function () {
-
-        Route::get('/collector/home', 'col_homeController@getItems');
-        Route::get('/details/{id}', 'col_detailsController@getDetails');
-        Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
-
-        Route::get('/collector/home', 'col_homeController@getItems');
-        Route::get('/collector/dashboard', 'col_dashboardController@index');
-        Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
-        Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
-
-        Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
-        Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
-
-        Route::get('/wallet', 'walletController@collectorWallet');
-
-        Route::get('/proof/{id}', 'authenticityController@authenticate');
-        Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');
-
-        
     });
     Route::group(['middleware' => ['creator']], function () {
         Route::get('/creator/home', 'creatorHome@index');
@@ -147,9 +124,24 @@ Route::group(['middleware' => ['session']], function () {
 
         Route::get('/transactions/{id}', 'transactionController@index');
     });
-    Route::group(['middleware' => ['manager']], function () {
+    Route::group(['middleware' => ['data_analyst']], function () {
         //write manager routes here
     });
+    Route::get('/collector/home', 'col_homeController@getItems');
+
+
+
+    Route::get('/collector/home', 'col_homeController@getItems');
+    Route::get('/collector/dashboard', 'col_dashboardController@index');
+    Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
+    Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
+
+    Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
+    Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
+
+    Route::get('/wallet', 'walletController@collectorWallet');
+    Route::get('/proof/{id}', 'authenticityController@authenticate');
+    Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');
+    Route::get('/details/{id}', 'col_detailsController@getDetails');
+    Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
 });
-
-

@@ -34,7 +34,6 @@
     </div>
     <br>
     @include('includes.marketplace')
-  
 </body>
 
 
