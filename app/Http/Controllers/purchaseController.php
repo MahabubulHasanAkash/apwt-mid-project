@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\View;
 
 class purchaseController extends Controller
 {
+
     public function verifyPurchase(Request $req, $id){
         
         $email = $req->session()->get('useremail');

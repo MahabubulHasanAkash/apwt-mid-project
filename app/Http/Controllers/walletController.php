@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-<<<<<<< HEAD
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -27,12 +26,8 @@ class walletController extends Controller
             )
         );
         return redirect('creator/account');
-=======
-use Illuminate\Support\Facades\DB;
-
-class walletController extends Controller
-{
-    public function index(Request $req){
+    }
+    public function collectorWallet(Request $req){
         
         $email = $req->session()->get('useremail');
 
@@ -46,6 +41,5 @@ class walletController extends Controller
         else{
             return redirect('/login')->with('msg', 'You Have to login First!');
         }
->>>>>>> 62f410ecab9fe5cd7f323e672e0de99f0e170031
     }
 }

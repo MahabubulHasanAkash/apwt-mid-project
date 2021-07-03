@@ -149,7 +149,7 @@ Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
 Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
 Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
 
-Route::get('/wallet', 'walletController@index');
+Route::get('/wallet', 'walletController@collectorWallet');
 
 
 
