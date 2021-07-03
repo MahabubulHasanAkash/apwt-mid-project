@@ -18,6 +18,8 @@ class auth extends Controller
                 return redirect("/creator/home");
             else if (session('usertype') == 'collector')
                 return view('collector.dashboard');
+            else if (session('usertype') == 'admin')
+                return redirect("/admin/home");
         } else
             return view('auth.login');
     }

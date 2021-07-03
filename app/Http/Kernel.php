@@ -67,6 +67,6 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\VerifyAdmin::class,
         'creator' => \App\Http\Middleware\VerifyCreator::class,
         'collector' => \App\Http\Middleware\VerifyCollector::class,
-        'manager' => \App\Http\Middleware\VerifyManager::class,
+        'dataAnalyst' => \App\Http\Middleware\VerifydataAnalyst::class,
     ];
 }
