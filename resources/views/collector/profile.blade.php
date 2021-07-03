@@ -18,10 +18,9 @@
 		<p class="title">{{$user->usertype}}</p>
 		<div class="info"><i class="fas fa-envelope-open-text"></i>&nbsp;&nbsp;{{$user->email}}</div>
 		<div class="info"><i class="fas fa-phone-alt"></i>&nbsp;&nbsp;{{$user->phone}}</div>
-	{{--
 		<div class="info"><i class="fas fa-birthday-cake"></i>&nbsp;&nbsp;{{$user->dob}}</div>
 		<div class="info"><i class="fas fa-venus-mars"></i>&nbsp;&nbsp;{{$user->gender}}</div>
-		<div class="info"><i class="fas fa-map-marked"></i>&nbsp;&nbsp;{{$user->address}}</div>--}}
+		<div class="info"><i class="fas fa-map-marked"></i>&nbsp;&nbsp;{{$user->address}}</div>
 		<div class="info"><i class="fas fa-user-edit"></i><a href="/collector/profileUpdate">o</a>Update</div>
 	</div>
 

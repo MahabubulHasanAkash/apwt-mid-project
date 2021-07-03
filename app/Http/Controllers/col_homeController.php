@@ -21,8 +21,7 @@ class col_homeController extends Controller
         else{
             return redirect('/login')->with('msg', 'You Have to login First!');
         }
-
-        
+       
 
     }
 
