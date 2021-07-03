@@ -27,18 +27,18 @@ class walletController extends Controller
         );
         return redirect('creator/account');
     }
-    public function collectorWallet(Request $req){
-        
+    public function collectorWallet(Request $req)
+    {
+
         $email = $req->session()->get('useremail');
 
-        if($req->session()->has('useremail')){
-            
+        if ($req->session()->has('useremail')) {
+
             $user = DB::table('wallet')
-                        ->where( 'email', $email)->first();
-            
-                        return view('collector.wallet')->with('user', $user);
-        }
-        else{
+                ->where('email', $email)->first();
+
+            return view('collector.wallet')->with('user', $user);
+        } else {
             return redirect('/login')->with('msg', 'You Have to login First!');
         }
     }
