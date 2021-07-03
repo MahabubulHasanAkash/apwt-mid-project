@@ -1,2 +1,1 @@
-require("./bootstrap");
-require("./w3");
+require('./bootstrap');

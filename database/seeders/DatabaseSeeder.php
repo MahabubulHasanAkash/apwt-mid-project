@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,6 +15,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create();
+        // foreach(range(1, 150) as $index){
+        //     DB::table('Compititor')->insert([
+        //         'name' => $faker->name,
+        //         'email' => $faker->unique()->safeEmail,
+        //         'password'=> encrypt('password'),
+        //         'created_at'=> $faker->dateTimeBetween('-6 month', '+2 month')
+        //     ]);
+        // }
+        // foreach(range(1, 80) as $index){
+        //     DB::table('creatives')->insert([
+        //         'name' => $faker->text($maxNbChars = 10) ,
+        //         'description' => $faker->realText($maxNbChars = 100, $indexSize = 2),
+        //         'url' => '1624719008.jpg',
+        //         'price'=> random_int(100, 999),
+        //         'status'=>rand(0,1),
+        //         'userid'=>rand(1,150),
+        //         'created_at'=> $faker->dateTimeBetween('-6 month', '+2 month')
+        //     ]);
+        // }
+        foreach(range(1, 80) as $index){
+            DB::table('sales')->insert([
+                'name' => $faker->text($maxNbChars = 10) ,
+                'unit' => random_int(5, 100),
+                'total' => 800,
+                'unit_price'=> random_int(100, 999),
+                'created_at'=> $faker->dateTimeBetween('-6 month', '+2 month')
+            ]);
+        }
         // \App\Models\User::factory(10)->create();
     }
 }
