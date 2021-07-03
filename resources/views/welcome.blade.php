@@ -38,8 +38,7 @@
         
     </div>
                                   
-        
+    @include('includes.footer1')       
 </body>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 </html>
-@include('includes.footer')

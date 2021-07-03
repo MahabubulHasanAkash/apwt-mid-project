@@ -13,9 +13,12 @@ class auth extends Controller
 
     public function index()
     {
-        if (session('userid') != null)
-            return redirect("/creator/home");
-        else
+        if (session('userid') != null) {
+            if (session('usertype') == 'creator')
+                return redirect("/creator/home");
+            else if (session('usertype') == 'collector')
+                return view('collector.dashboard');
+        } else
             return view('auth.login');
     }
 

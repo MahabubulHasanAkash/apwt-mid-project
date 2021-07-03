@@ -34,7 +34,7 @@
     </div>
     <br>
     @include('includes.marketplace')
-    @include('includes.footer')
+  
 </body>
 
 

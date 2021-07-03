@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -39,8 +40,6 @@ Route::group(['middleware' => ['session']], function () {
 
     Route::group(['middleware' => ['admin']], function () {
 
-
-        //write admin routes here
         Route::get('/admin/home', 'adminHome@index');
         Route::post('/admin/searchActivity', 'adminHome@searchActivity');
 
@@ -77,13 +76,26 @@ Route::group(['middleware' => ['session']], function () {
         Route::get('/admin/viewCollector/delete/{id}', 'adminController@deleteCollector');
     });
     Route::group(['middleware' => ['collector']], function () {
-        //write collector routes here
+        Route::get('/details/{id}', 'col_detailsController@getDetails');
+        Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
+
+        Route::get('/collector/home', 'col_homeController@getItems');
+        Route::get('/collector/dashboard', 'col_dashboardController@index');
+        Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
+        Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
+
+        Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
+        Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
+
+        Route::get('/wallet', 'walletController@index');
 
 
 
+
+        Route::get('/proof/{id}', 'authenticityController@authenticate');
+        Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');
     });
     Route::group(['middleware' => ['creator']], function () {
-        //write creator routes here
         Route::get('/creator/home', 'creatorHome@index');
         Route::get('/home/{id}', 'nftController@index');
         Route::get('/creator/profile', 'creatorController@index');
@@ -133,26 +145,3 @@ Route::group(['middleware' => ['session']], function () {
         //write manager routes here
     });
 });
-
-
-//Collector route----->>>
-
-
-Route::get('/details/{id}', 'col_detailsController@getDetails');
-Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
-
-Route::get('/collector/home', 'col_homeController@getItems');
-Route::get('/collector/dashboard', 'col_dashboardController@index');
-Route::get('/myCollection', 'CollectionController@getCollection')->name('collector.collection');
-Route::get('/profile', 'col_profileController@index')->name('collectorProfile');
-
-Route::get('/collector/profileUpdate', 'Col_profileUpdateController@index');
-Route::post('/collector/profileUpdate', 'Col_profileUpdateController@update');
-
-Route::get('/wallet', 'walletController@index');
-
-
-
-
-Route::get('/proof/{id}', 'authenticityController@authenticate');
-Route::get('/collectionProof/{id}', 'authenticityController@myCollectionProof');
