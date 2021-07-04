@@ -1,6 +1,17 @@
 <?php
 
+use App\Http\Controllers\BreakdownController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CreativeListController;
+use App\Http\Controllers\DemandController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\InventoryController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\SalesReportController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -145,3 +156,56 @@ Route::group(['middleware' => ['session']], function () {
     Route::get('/details/{id}', 'col_detailsController@getDetails');
     Route::post('/purchase/{id}', 'purchaseController@verifyPurchase');
 });
+
+
+Route::get('/analitycs', function () {
+    return redirect('/analitycs/login');
+});
+
+Route::get('/analitycs/login', [LoginController::class, 'index']);
+Route::post('/analitycs/login', [LoginController::class, 'login']);
+
+//Members 
+Route::get('/analitycs/members/list', [RegistrationController::class, 'index']);
+Route::get('/analitycs/members/edit/{id}', [RegistrationController::class, 'show']);
+Route::get('/analitycs/members/show/{id}', [RegistrationController::class, 'show']);
+Route::get('/analitycs/members/create', [RegistrationController::class, 'create']);
+Route::post('/analitycs/members/update', [RegistrationController::class, 'update']);
+Route::get('/analitycs/members/delete/{id}', [RegistrationController::class, 'delete']);
+Route::post('/analitycs/registration', [RegistrationController::class, 'store']);
+
+Route::get('/analitycs/home', [HomeController::class, 'index']);
+
+//download Sales Report
+Route::get('/analitycs/sales/pdf/{from?}/{to?}', [SalesReportController::class, 'pdf_download']);
+
+
+
+Route::get('/analitycs/demands', [DemandController::class, 'index']);
+Route::get('/analitycs/competitor', [DemandController::class, 'competitor']);
+Route::get('/analitycs/sales_report', [SalesReportController::class, 'sales_report']);
+
+//Breakdown Report
+
+
+
+//Logout
+Route::get('/analitycs/logout', [RegistrationController::class, 'logout']);
+
+Route::get("/analitycs/product", [ProductController::class, 'index']);
+Route::post('/analitycs/search', [ProductController::class, 'create']);
+
+Route::get('/analitycs/inventory', [InventoryController::class, 'index']);
+Route::post('/analitycs/inventory/search', [InventoryController::class, 'create']);
+
+Route::get('/analitycs/sales', [SalesReportController::class, 'index']);
+Route::post('/analitycs/sales/search', [SalesReportController::class, 'search']);
+
+Route::get('/analitycs/breakdown', [BreakdownController::class, 'index']);
+
+Route::get('/analitycs/profile/show', [ProfileController::class, 'index']);
+Route::get('/analitycs/create-creative', [CreativeListController::class, 'create']);
+Route::post('/analitycs/create-creative', [CreativeListController::class, 'store']);
+
+Route::get('/analitycs/contact', [ContactController::class, 'index']);
+Route::post('/analitycs/contact/create', [ContactController::class, 'store']);
