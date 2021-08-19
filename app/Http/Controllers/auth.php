@@ -24,6 +24,8 @@ class auth extends Controller
             return view('auth.login');
     }
 
+
+
     public function verifylogin(LoginRequest $req)
     {
 
@@ -51,6 +53,27 @@ class auth extends Controller
         } else {
             $req->session()->flash('msg', 'Please register first');
             return redirect('/login');
+        }
+    }
+
+    public function verifylogin_api(Request $req)
+    {
+
+        $userCount = DB::table('user')
+            ->where('email', $req->json('email'))
+            ->count();
+        if ($userCount > 0) {
+            $user = DB::table('user')
+                ->where('email', $req->json('email'))
+                ->first();
+            // $token = $req->user()->createToken($req->token_name);
+            if (password_verify($req->json('password'), $user->password)) {
+                return response()->json($user);
+            } else {
+                return response()->json('Wrong Credentials');
+            }
+        } else {
+            return response()->json('Please signup first');
         }
     }
 

@@ -79,7 +79,10 @@ Route::group(['middleware' => ['session']], function () {
     Route::group(['middleware' => ['collector']], function () {
     });
     Route::group(['middleware' => ['creator']], function () {
+        
         Route::get('/creator/home', 'creatorHome@index');
+
+
         Route::get('/home/{id}', 'nftController@index');
         Route::get('/creator/profile', 'creatorController@index');
         Route::get('/creator/profile/{userid}', 'creatorController@index');

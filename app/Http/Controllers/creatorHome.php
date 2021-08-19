@@ -22,4 +22,21 @@ class creatorHome extends Controller
             ->get();
         return view('creator.home')->with("nfts", $nfts);
     }
+
+
+    public function index_api()
+    {
+        $nfts = Nft::all();
+        return response()->json(['nft' => $nfts]);
+    }
+
+    public function search_api(Request $req)
+    {
+
+        $nfts = DB::table('nft')
+            ->where('name', 'like', $req->search . '%')
+            ->get();
+
+        return response()->json(['nft' => $nfts]);
+    }
 }
