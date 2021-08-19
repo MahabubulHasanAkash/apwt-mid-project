@@ -18,9 +18,9 @@
                      <a style="color:blue"><a href="">Learn more </a> about our available payment options.
                  </div>
                  <div class="w3-section">
-                    <h2>Add Doigital Wallet</h2> 
+                    <h2>Add Digital Wallet</h2> 
                 </div>
-                <button  type="submit" class="w3-button  w3-black">Add Wallet</button>
+                <button type="submit" class="w3-button  w3-black">Add Wallet</button>
                 <br>
                 <br>
             </form>

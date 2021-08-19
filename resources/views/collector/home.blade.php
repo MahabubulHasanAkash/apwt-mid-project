@@ -26,26 +26,7 @@
             </div>
           </div>
         <h3 style="display: inline-block">Featured<h3>  
-        <div class="row">
-
-          @foreach ($item as $items)
-
-            <div class="col-md-3">
-              <div class="thumbnail">
-                <a href="/details/{{$items->id}}" {{--put link for next page--}} target="_blank"> 
-
-                  <img src="/images/{{$items->image}}" alt="Art{{$items->id}}" style="width:100%">
-                  <div class="caption">
-                    <p>{{$items->name}}</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-          
-          @endforeach
-          
-          
-        </div>
+          @include('includes.marketplace') 
       </div>
 </body>
 @include('includes.footer1')

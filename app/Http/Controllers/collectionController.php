@@ -3,11 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class collectionController extends Controller
+class CollectionController extends Controller
 {
     public function index()
     {
-        return view ('collector.myCollection');
+        //
+
+    }
+
+    public function getCollection(Request $req)
+    {
+
+        $cllection = DB::table('collection')->get();
+        return view('collector.myCollection')->with('collection', $cllection);
     }
 }

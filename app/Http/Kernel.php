@@ -42,6 +42,11 @@ class Kernel extends HttpKernel
         'api' => [
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
+            'throttle:api',
+            \Illuminate\Routing\Middleware\SubstituteBindings::class,
+
+
         ],
     ];
 
@@ -66,7 +71,7 @@ class Kernel extends HttpKernel
         'session' => \App\Http\Middleware\VerifySession::class,
         'admin' => \App\Http\Middleware\VerifyAdmin::class,
         'creator' => \App\Http\Middleware\VerifyCreator::class,
-        'collecor' => \App\Http\Middleware\VerifyCollector::class,
-        'manager' => \App\Http\Middleware\VerifyManager::class,
+        'collector' => \App\Http\Middleware\VerifyCollector::class,
+        'dataAnalyst' => \App\Http\Middleware\VerifydataAnalyst::class,
     ];
 }

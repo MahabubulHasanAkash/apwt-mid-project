@@ -23,7 +23,7 @@
               <div class="panel-body">
                   <div class="col-md-6">
                       <div class="pro-img-details">
-                          <img src="/images/{{$item->image}}" width="80%" alt="Art {{$item->id}}">
+                          <img src="/upload/{{$item->image}}" width="80%" alt="Art {{$item->id}}">
                       </div>
                   </div>
                   <div class="col-md-6">

@@ -4,7 +4,7 @@
             @foreach ($nfts as $nft)
             <div class="col-md-4" style="height:300px;width:300px">
                 <div class="thumbnail" style="margin-top: 2%">
-                    <a href="/nft/details/{{$nft->id}}"> 
+                    <a href="/details/{{$nft->id}}"> 
                         <img src="{{asset('upload/'.$nft->image)}}" alt="Art" style="height:220px;width:300px">
                         <div class="caption">
                             Title:{{$nft->name}}<br>
