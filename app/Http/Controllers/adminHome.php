@@ -32,4 +32,12 @@ class adminHome extends Controller
             ->get();
         return view('admin.home')->with("activityList", $activities);
     }
+
+    public function index_api(Request $req)
+    {
+
+        $activities = NFT::all();
+
+        return response()->json($activities);
+    }
 }

@@ -17,6 +17,16 @@ class termsController extends Controller
         return view ('admin.terms')->with('termList',$terms);
 
     }
+    public function view_api (Request $req)
+    {
+    
+        $terms = Terms::all();
+        
+        return response()->json($terms);
+
+    }
+
+
     public function update(Request $req)
     {
         

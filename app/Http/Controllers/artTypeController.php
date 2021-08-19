@@ -13,6 +13,11 @@ class artTypeController extends Controller
         $artTypes = ArtType::all();        
         return view ('admin.artType')->with('artTypeList',$artTypes);
     }
+    public function index_api()
+    {
+        $artTypes = ArtType::all();        
+        return response()->json($artTypes);
+    }
 
     public function insert(Request $req)
     {

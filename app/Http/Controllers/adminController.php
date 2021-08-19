@@ -128,15 +128,21 @@ class adminController extends Controller
         //     return redirect()->route('user.viewAllUser');
     }
 
+
+
     public function view(Request $req)
     {
-        // $admins = DB::table('user')->get();
-      
-        // return view ('admin.adminPanel')->with('adminList',$admins);
         
         $admins = User::where('usertype', 'admin')->get();
         
         return view ('admin.adminPanel')->with('adminList',$admins);
+    }
+    public function view_api(Request $req)
+    {   
+        
+        $admins = User::where('usertype', 'admin')->get();
+        
+        return response()->json($admins);
     }
 
     
@@ -187,6 +193,13 @@ class adminController extends Controller
         
         return view ('admin.viewCreator')->with('creators',$creators);
     }
+    public function viewCreators_api()
+    {  
+        $creators = User::where('usertype', 'creator')->get();
+        return response()->json($creators);
+    }
+
+
 
     public function searchCreator(Request $req)
     {
@@ -223,6 +236,14 @@ class adminController extends Controller
         
         return view ('admin.viewCollector')->with('collectors',$collectors);
     }
+    public function viewCollectors_api()
+    {
+        $collectors = User::where('usertype', 'collector')->get();
+        
+        return response()->json($collectors);
+    }
+
+
 
     public function searchCollector(Request $req)
     {
@@ -259,6 +280,14 @@ class adminController extends Controller
         
         return view ('admin.nft')->with('nftList',$nfts);
     }
+    public function viewNFT_api()
+    {
+        $nfts = NFT::all();
+        
+        return response()->json($nfts);
+    }
+
+
 
     public function searchNFT(Request $req)
     {

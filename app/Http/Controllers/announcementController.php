@@ -15,10 +15,16 @@ class announcementController extends Controller
 {
     public function index()
     {
-        // $a_id = $req->session()->get('id');
         $announcements = Announcement::all();        
         return view ('admin.announcement')->with('announcementList',$announcements);
     }
+    public function index_api()
+    {
+        $announcements = Announcement::all();        
+        return response()->json($announcements);
+    }
+
+
     public function insert(Request $req)
     {
         

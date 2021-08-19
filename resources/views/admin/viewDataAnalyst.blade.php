@@ -79,7 +79,7 @@
         </div><br><br><br>         
         <p class="fa fa-users w3-large"> View Data Analysts</p> <br> <br>           
           <div class="w3-container w3-padding "><br>
-            <h6 class="w3-opacity">Creators</h6>
+            <h6 class="w3-opacity">Data Analysts</h6>
             <table>
               <tr>
                 <th>Name</th>
