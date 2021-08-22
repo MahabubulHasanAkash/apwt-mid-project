@@ -34,4 +34,18 @@ class authenticityController extends Controller
             ->with('item', $item)
             ->with('block', $block);
     }
+    public function Proof_api_1($id){
+               
+        $block = DB::table('block')
+        ->where('id', $id)->first();
+
+        return response()->json($block);
+    }
+    public function Proof_api_2($id){
+
+        $item = DB::table('nft')
+        ->where('id', $id)->first();
+
+        return response()->json($item);
+    }
 }

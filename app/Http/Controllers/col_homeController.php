@@ -22,4 +22,19 @@ class col_homeController extends Controller
             return redirect('/login')->with('msg', 'You Have to login First!');
         }
     }
+    public function getItems_api(Request $req){
+
+        /*         if($req->session()->has('useremail')){
+                    
+        
+                }
+                else{
+                    $msg = 'You Have to login First!';
+                    return response()->json(['msg' => $msg]);
+                } */
+                $item = DB::table('nft')->get();
+                return response()->json($item);
+               
+        
+            }
 }

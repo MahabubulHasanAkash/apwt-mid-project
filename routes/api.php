@@ -62,6 +62,16 @@ Route::group(['middleware' => ['session']], function () {
         Route::get('/admin/viewCollector/delete/{id}', 'adminController@deleteCollector');
     });
     Route::group(['middleware' => ['collector']], function () {
+        //Collectors api
+        Route::post('/login', 'auth@verifylogin_api');
+        Route::get('/collector/home', 'col_homeController@getItems_api');
+        Route::get('/details/{id}', 'col_detailsController@getDetails_api');
+        Route::get('/proof-1/{id}', 'authenticityController@Proof_api_1');
+        Route::get('/proof-2/{id}', 'authenticityController@Proof_api_2');
+        Route::get('/profile/{id}', 'col_profileController@profile_api');
+        Route::post('/collector/profileUpdate/{id}', 'Col_profileUpdateController@update_api');
+        Route::get('/wallet/{id}', 'walletController@wallet_api');
+        Route::get('/myCollection', 'CollectionController@getCollection_api');
     });
 
     Route::group(['middleware' => ['creator']], function () {

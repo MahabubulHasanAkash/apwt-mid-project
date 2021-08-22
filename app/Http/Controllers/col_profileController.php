@@ -18,6 +18,14 @@ class col_profileController extends Controller
                 
         return view('Collector.profile')->with('user', $user);
     }
+    public function profile_api($id){
+
+        $user = DB::table('user')
+                ->where( 'id', $id)->first();
+                
+        return response()->json($user);
+    }
+
 
     
 

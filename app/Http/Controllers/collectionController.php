@@ -19,4 +19,10 @@ class CollectionController extends Controller
         $cllection = DB::table('collection')->get();
         return view('collector.myCollection')->with('collection', $cllection);
     }
+    public function getCollection_api()
+    {
+
+        $collection = DB::table('collection')->get();
+        return response()->json($collection);
+    }
 }

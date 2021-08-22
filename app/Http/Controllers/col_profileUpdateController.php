@@ -36,5 +36,19 @@ class col_profileUpdateController extends Controller
         //return view()->Route('collectorProfile')->with('user', $user);
         return view('Collector.dashboard')->with('user', $user)->with('msg', '.');
     }
+    public function update_api(Request $req, $id){
+
+        $email = $req->json('email');
+
+        DB::table('user')
+                ->where( 'id', $id)
+                ->update([
+                        'name' => $req->json('name'),
+                        'phone' => $req->json('phone'),
+                        'email' => $req->json('email'),
+                        'dob' => $req->json('dob'),
+                        'address' => $req->json('address')
+                        ]);     
+    }
 
 }
